@@ -1638,3 +1638,73 @@ footer {
         min-width: 40px !important;
     }
 }
+/* ===== HERO: TIGER PHOTO SHOWCASE ===== */
+
+#home {
+    background-position: 35% center !important;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(9, 24, 15, 0.82) 0%,
+            rgba(9, 24, 15, 0.58) 28%,
+            rgba(9, 24, 15, 0.22) 48%,
+            rgba(9, 24, 15, 0.02) 72%
+        ),
+        url('./sundarban tiger 2.jpg') !important;
+}
+
+/* Desktop text area */
+#home .hero-content {
+    max-width: 640px;
+    padding-top: 85px;
+    padding-bottom: 85px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Headline refinement */
+#home h1,
+#home .hero-title {
+    font-size: clamp(54px, 6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+}
+
+/* Description refinement */
+#home p,
+#home .hero-description {
+    max-width: 530px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ===== MOBILE HERO ===== */
+@media (max-width: 768px) {
+
+    #home {
+        background-position: 22% center !important;
+    }
+
+    #home .hero-content {
+        max-width: 100%;
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    #home h1,
+    #home .hero-title {
+        font-size: clamp(45px, 10.5vw, 62px);
+        line-height: 1;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+    }
+
+    #home p,
+    #home .hero-description {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+}
