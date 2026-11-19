@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wildmaniacsst-cell.github.io/sudeep-sundarban-travels/sitemap.xml
