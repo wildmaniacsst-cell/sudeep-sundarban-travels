@@ -1485,3 +1485,56 @@ footer {
         transition-duration: 0.01ms !important;
     }
 }
+/* ===== BRAND TYPOGRAPHY UPGRADE ===== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #173d2a;
+}
+
+.brand-subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-top: 5px;
+    color: #6a756b;
+}
+
+/* Footer brand */
+.footer-brand .brand-name {
+    color: #f7f4e9;
+}
+
+.footer-brand .brand-subtitle {
+    color: rgba(247, 244, 233, 0.65);
+}
+
+/* Mobile brand */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .brand-subtitle {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+}
