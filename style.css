@@ -1708,3 +1708,10 @@ footer {
         max-width: 100%;
     }
 }
+/* Desktop: move hero text left of tiger face */
+@media (min-width: 769px) {
+    #home .hero-content {
+        max-width: 520px;
+        margin-left: -140px;
+    }
+}
