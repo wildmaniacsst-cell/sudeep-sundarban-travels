@@ -3075,3 +3075,43 @@ footer .container {
     }
 
 }
+/* ===== CONTACT DETAILS FINAL POLISH ===== */
+
+#booking .booking-detail {
+    padding: 12px 0;
+    transition: transform 0.3s ease;
+}
+
+#booking .booking-detail:hover {
+    transform: translateX(5px);
+}
+
+#booking .booking-detail-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    background: #e9e5d9;
+    border: 1px solid rgba(23, 61, 42, 0.08);
+    color: #173d2a;
+    font-size: 18px;
+}
+
+#booking .booking-detail strong {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a88950;
+}
+
+#booking .booking-detail span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #173d2a;
+    line-height: 1.7;
+}
+
+#booking .booking-details {
+    border-top: 1px solid rgba(23, 61, 42, 0.12);
+    padding-top: 20px;
+    max-width: 440px;
+}
