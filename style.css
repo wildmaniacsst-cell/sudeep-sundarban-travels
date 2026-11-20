@@ -1712,7 +1712,7 @@ footer {
 @media (min-width: 769px) {
     #home .hero-content {
         max-width: 520px;
-        margin-right: 5;
+        margin-right: 10;
     }
 }
 /* ================= GUEST REVIEWS DESIGN ================= */
