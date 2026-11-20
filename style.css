@@ -1855,3 +1855,325 @@ footer {
 }
 
 /* ================= END GUEST REVIEWS ================= */
+/* ==========================================
+   SUNDARBAN WILDLIFE EDITORIAL JOURNAL
+   ========================================== */
+
+.wildlife-journal {
+    background: #f4f0e6;
+    color: #183d2b;
+    overflow: hidden;
+}
+
+.journal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 55px;
+}
+
+.journal-header > div {
+    max-width: 650px;
+}
+
+.journal-eyebrow {
+    display: block;
+    color: #a88950;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.journal-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 0;
+    color: #183d2b;
+}
+
+.journal-header h2 em {
+    color: #a88950;
+    font-weight: 400;
+}
+
+.journal-intro {
+    max-width: 390px;
+    color: #657267;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 8px;
+}
+
+/* EDITORIAL GRID */
+
+.journal-layout {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* FEATURED STORY */
+
+.journal-featured {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    min-width: 0;
+}
+
+.journal-image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #d8d5c8;
+    text-decoration: none;
+}
+
+.journal-featured .featured-image {
+    height: 520px;
+}
+
+.journal-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.journal-image:hover img {
+    transform: scale(1.04);
+}
+
+.journal-image-label {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    padding: 10px 14px;
+    background: #183d2b;
+    color: #f4f0e6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* STORY CONTENT */
+
+.journal-content {
+    padding-top: 24px;
+}
+
+.journal-category {
+    display: inline-block;
+    color: #a88950;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.journal-content h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 29px;
+    line-height: 1.3;
+    font-weight: 500;
+    color: #183d2b;
+    margin: 0 0 16px;
+}
+
+.journal-content p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #667167;
+    margin: 0 0 24px;
+}
+
+.journal-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #183d2b;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-bottom: 1px solid #a88950;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.journal-read-link span {
+    color: #a88950;
+    font-size: 15px;
+    transition: transform 0.3s ease;
+}
+
+.journal-read-link:hover {
+    color: #a88950;
+}
+
+.journal-read-link:hover span {
+    transform: translate(4px, -3px);
+}
+
+/* SIDE EDITORIAL STORIES */
+
+.journal-story {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 0;
+}
+
+.journal-story .journal-image {
+    height: 230px;
+}
+
+.journal-story .journal-content {
+    padding-top: 20px;
+}
+
+.journal-story .journal-content h3 {
+    font-size: 25px;
+}
+
+.journal-story .journal-content p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* JOURNAL FOOTER */
+
+.journal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 65px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(24, 61, 43, 0.18);
+}
+
+.journal-footer > span {
+    color: #7b857c;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.journal-footer a {
+    color: #183d2b;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+}
+
+.journal-footer a span {
+    color: #a88950;
+    margin-left: 8px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .journal-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .journal-intro {
+        max-width: 600px;
+    }
+
+    .journal-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .journal-featured .featured-image {
+        height: 420px;
+    }
+
+    .journal-story .journal-image {
+        height: 190px;
+    }
+
+    .journal-content h3 {
+        font-size: 25px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .journal-header {
+        margin-bottom: 35px;
+    }
+
+    .journal-header h2 {
+        font-size: 42px;
+    }
+
+    .journal-layout {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .journal-featured {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .journal-featured .featured-image {
+        height: 350px;
+    }
+
+    .journal-story .journal-image {
+        height: 250px;
+    }
+
+    .journal-content h3 {
+        font-size: 27px;
+    }
+
+    .journal-story .journal-content h3 {
+        font-size: 25px;
+    }
+
+    .journal-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-top: 45px;
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+    .journal-header h2 {
+        font-size: 36px;
+    }
+
+    .journal-featured .featured-image {
+        height: 300px;
+    }
+
+    .journal-story .journal-image {
+        height: 210px;
+    }
+
+}
