@@ -251,12 +251,12 @@ h3 {
 
 .logo-text strong {
     font-family: var(--font-heading);
-    font-size: 20px;
+    font-size: 16px;
     color: var(--forest);
 }
 
 .logo-text span {
-    font-size: 12px;
+    font-size: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-light);
