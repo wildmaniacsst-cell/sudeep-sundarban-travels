@@ -256,7 +256,7 @@ h3 {
 }
 
 .logo-text span {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--text-light);
