@@ -2661,3 +2661,417 @@ footer {
         font-size: 14px;
     }
 }
+/* =========================================
+   PREMIUM CONTACT / EXPEDITION ENQUIRY
+   ========================================= */
+
+#booking {
+    background: #f3efe5;
+    position: relative;
+}
+
+#booking .container {
+    max-width: 1240px;
+}
+
+#booking .booking-grid,
+#booking .booking-info {
+    align-items: start;
+}
+
+/* LEFT CONTENT */
+
+#booking .booking-info,
+#booking .booking-content {
+    padding-top: 10px;
+}
+
+#booking .section-eyebrow,
+#booking .section-eyebrow.light {
+    color: #b2874c;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+#booking h2,
+#booking .booking-content h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 500;
+    line-height: 1.12;
+    color: #173d2a;
+    margin: 22px 0;
+}
+
+#booking h2 em {
+    color: #a88950;
+}
+
+#booking .booking-info > p,
+#booking .booking-content > p {
+    max-width: 440px;
+    color: #68766c;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* CONTACT DETAILS */
+
+#booking .booking-details {
+    margin-top: 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#booking .booking-detail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+}
+
+#booking .booking-detail-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #e7e4d8;
+    color: #173d2a;
+    border: 1px solid rgba(23, 61, 42, 0.08);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+#booking .booking-detail:hover .booking-detail-icon {
+    background: #173d2a;
+    color: #f3efe5;
+    transform: translateY(-2px);
+}
+
+#booking .booking-detail strong {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    color: #a88950;
+}
+
+#booking .booking-detail span {
+    font-size: 14px;
+    color: #173d2a;
+    line-height: 1.6;
+}
+
+/* FORM PANEL */
+
+#booking #inquiryForm,
+#booking .inquiry-form,
+#booking .booking-form {
+    padding: clamp(25px, 4vw, 48px);
+    background: #fbfaf6;
+    border: 1px solid rgba(23, 61, 42, 0.12);
+    border-radius: 3px;
+    box-shadow: 0 25px 70px rgba(23, 61, 42, 0.07);
+}
+
+#booking .form-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #173d2a;
+    margin-bottom: 8px;
+}
+
+#booking form::before {
+    content: "S U N D A R B A N   E X P E D I T I O N";
+    display: block;
+    color: #a88950;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+#booking .form-grid {
+    gap: 18px;
+}
+
+#booking .form-group {
+    margin-bottom: 17px;
+}
+
+#booking .form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #294536;
+    margin-bottom: 8px;
+}
+
+#booking .form-group input,
+#booking .form-group select,
+#booking .form-group textarea,
+#booking #inquiryForm input,
+#booking #inquiryForm select,
+#booking #inquiryForm textarea {
+    min-height: 51px;
+    padding: 14px 15px;
+    border: 1px solid #dedfd5;
+    border-radius: 2px;
+    background: #f6f5ef;
+    font-size: 13px;
+    color: #243d2c;
+    transition: all 0.25s ease;
+}
+
+#booking .form-group input::placeholder,
+#booking .form-group textarea::placeholder {
+    color: #9a9f95;
+}
+
+#booking .form-group input:focus,
+#booking .form-group select:focus,
+#booking .form-group textarea:focus {
+    background: #ffffff;
+    border-color: #a88950;
+    box-shadow: 0 0 0 3px rgba(168, 137, 80, 0.08);
+}
+
+#booking .form-group textarea {
+    min-height: 120px;
+}
+
+/* FORM BUTTON */
+
+#booking #inquiryForm button,
+#booking .booking-form button {
+    min-height: 55px;
+    background: #173d2a;
+    border: 1px solid #173d2a;
+    border-radius: 2px;
+    color: #f3efe5;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+#booking #inquiryForm button:hover,
+#booking .booking-form button:hover {
+    background: #a88950;
+    border-color: #a88950;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   PREMIUM FOOTER
+   ========================================= */
+
+#contact,
+footer {
+    background: #102e20;
+    color: #f3efe5;
+    position: relative;
+}
+
+#contact .container,
+footer .container {
+    max-width: 1240px;
+}
+
+.footer-main {
+    grid-template-columns: 1.6fr 0.9fr 1fr 1.1fr;
+    gap: 55px;
+    padding: 85px 0 65px;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+/* BRAND COLUMN */
+
+.footer-column:first-child .brand-name,
+.footer-brand .brand-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #f3efe5;
+}
+
+.footer-column:first-child .brand-subtitle,
+.footer-brand .brand-subtitle {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: rgba(243, 239, 229, 0.55);
+}
+
+.footer-column:first-child p {
+    max-width: 330px;
+    margin-top: 25px;
+    line-height: 1.9;
+    color: rgba(243, 239, 229, 0.65);
+}
+
+/* FOOTER HEADINGS */
+
+.footer-column h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c5a572;
+    margin-bottom: 25px;
+}
+
+/* FOOTER LINKS */
+
+.footer-column ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin: 0 0 16px;
+}
+
+.footer-column ul a,
+.footer-contact a {
+    color: rgba(243, 239, 229, 0.68);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.footer-column ul a:hover,
+.footer-contact a:hover {
+    color: #c5a572;
+    padding-left: 3px;
+}
+
+/* CONTACT COLUMN */
+
+.footer-contact p {
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* FOOTER SOCIAL */
+
+.social-links {
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(243, 239, 229, 0.18);
+    border-radius: 50%;
+    color: #f3efe5;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #c5a572;
+    color: #102e20;
+    border-color: #c5a572;
+    transform: translateY(-3px);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    padding: 25px 0;
+    border-top: 1px solid rgba(243, 239, 229, 0.12);
+    color: rgba(243, 239, 229, 0.42);
+    font-size: 11px;
+}
+
+.footer-bottom a {
+    color: rgba(243, 239, 229, 0.55);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #c5a572;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    #booking .booking-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    #booking .booking-info,
+    #booking .booking-content {
+        max-width: 650px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px 35px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #booking h2,
+    #booking .booking-content h2 {
+        font-size: 39px;
+    }
+
+    #booking #inquiryForm,
+    #booking .inquiry-form,
+    #booking .booking-form {
+        padding: 25px 20px;
+    }
+
+    #booking .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #booking .form-group.full-width,
+    #booking .full-width {
+        grid-column: auto;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 60px 0 45px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+}
+/* =========================================
+   MOBILE FOOTER REFINEMENT
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .footer-column h3 {
+        margin-bottom: 18px;
+    }
+
+    .footer-column:first-child .brand-name,
+    .footer-brand .brand-name {
+        font-size: 30px;
+    }
+
+}
