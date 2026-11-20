@@ -1708,11 +1708,11 @@ footer {
         max-width: 100%;
     }
 }
-/* Desktop: move hero text left of tiger face */
+/* Desktop: move hero text right of tiger face */
 @media (min-width: 769px) {
     #home .hero-content {
         max-width: 520px;
-        margin-right: 10;
+        margin-right: 5;
     }
 }
 /* ================= GUEST REVIEWS DESIGN ================= */
