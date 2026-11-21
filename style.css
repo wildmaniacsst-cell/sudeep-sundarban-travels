@@ -3498,3 +3498,37 @@ footer .footer-main {
     }
 
 }
+
+
+/* PREMIUM EXPERIENCE CARD CTA */
+.experience-card .experience-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 12px;
+  padding: 10px 15px;
+  border: 1px solid rgba(231,165,109,0.55);
+  border-radius: 2px;
+  color: #e7a56d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: rgba(231,165,109,0.045);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.experience-card .experience-cta span {
+  font-size: 15px;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+.experience-card .experience-cta:hover {
+  background: rgba(231,165,109,0.13);
+  border-color: #e7a56d;
+  transform: translateY(-2px);
+}
+.experience-card .experience-cta:hover span {
+  transform: translateX(3px);
+}
