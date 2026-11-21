@@ -3599,7 +3599,7 @@ footer .footer-main {
   inset:0;
   z-index:-1;
   background:
-    linear-gradient(rgba(11,43,30,.88),rgba(11,43,30,.91)),
+    linear-gradient(rgba(11,43,30,.56),rgba(11,43,30,.68)),
     url("sundarban%20tiger%2025.jpg") center 42%/cover no-repeat;
   opacity:1;
   pointer-events:none;
