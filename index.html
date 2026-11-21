@@ -729,7 +729,7 @@
             </p>
         </div>
 
-        <div class="reviews-grid">
+        <div class="reviews-carousel"><div class="reviews-grid" id="reviewsTrack">
 
             <!-- REVIEW 1 -->
             <div class="review-card">
@@ -741,11 +741,11 @@
                 </p>
 
                 <div class="review-author">
-                    <div class="review-avatar">G</div>
+                    <div class="review-avatar" aria-label="Guest initials">RS</div>
 
                     <div>
                         <h4>Ravi Anand Sinha</h4>
-                        <span>India</span>
+                        <small class="review-designation">Guest Traveller</small><span class="review-location">City not provided · India</span>
                     </div>
                 </div>
 
@@ -761,11 +761,11 @@
                 </p>
 
                 <div class="review-author">
-                    <div class="review-avatar">G</div>
+                    <div class="review-avatar" aria-label="Guest initials">UD</div>
 
                     <div>
                         <h4>Uddalok Das</h4>
-                        <span>India</span>
+                        <small class="review-designation">Guest Traveller</small><span class="review-location">City not provided · India</span>
                     </div>
                 </div>
 
@@ -785,15 +785,16 @@
 
                     <div>
                         <h4>Sandip Kumar Basu</h4>
-                        <span>India</span>
+                        <small class="review-designation">Guest Traveller</small><span class="review-location">City not provided · India</span>
                     </div>
                 </div>
 
             </div>
 
-        </div>
+        </div><div class="reviews-carousel-controls"><button type="button" class="review-control" id="reviewsPrev" aria-label="Previous guest reviews">←</button><span class="review-control-label">GUEST STORIES</span><button type="button" class="review-control" id="reviewsNext" aria-label="Next guest reviews">→</button></div></div>
 
     </div>
+
 
 </section>
 
@@ -1461,6 +1462,19 @@
  track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);
  track.addEventListener('focusin',stop);track.addEventListener('focusout',start);
  start();
+})();
+</script>
+<script>
+(function(){
+ const track=document.getElementById('reviewsTrack'),prev=document.getElementById('reviewsPrev'),next=document.getElementById('reviewsNext');
+ if(!track||!prev||!next)return;
+ let timer=null;
+ const step=()=>{const card=track.querySelector('.review-card');if(!card)return 0;return card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0)};
+ const move=d=>track.scrollBy({left:step()*d,behavior:'smooth'});
+ prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+ const pause=()=>{if(timer){clearInterval(timer);timer=null}};
+ const start=()=>{pause();timer=setInterval(()=>{const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-8)track.scrollTo({left:0,behavior:'smooth'});else move(1)},5600)};
+ track.addEventListener('mouseenter',pause);track.addEventListener('mouseleave',start);track.addEventListener('focusin',pause);track.addEventListener('focusout',start);start();
 })();
 </script>
 <script src="script.js"></script>
