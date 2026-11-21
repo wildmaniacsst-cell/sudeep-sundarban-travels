@@ -3549,3 +3549,21 @@ footer .footer-main {
 @media(max-width:900px){#gallery .wildlife-slide{flex-basis:calc((100% - 16px)/2);height:clamp(290px,48vw,420px)}}
 @media(max-width:600px){#gallery .wildlife-carousel-track{gap:12px}#gallery .wildlife-slide{flex-basis:82%;height:390px}#gallery .wildlife-carousel-controls{gap:13px}#gallery .gallery-control{width:38px;height:38px}#gallery .gallery-control-label{font-size:9px;letter-spacing:1.2px}}
 @media(prefers-reduced-motion:reduce){#gallery .wildlife-slide img{transition:none;}}
+
+/* AUTO-SLIDING GUEST REVIEWS */
+#reviews .reviews-carousel{overflow:hidden;margin-top:34px}
+#reviews .reviews-grid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px 0 12px}
+#reviews .reviews-grid::-webkit-scrollbar{display:none}
+#reviews .review-card{flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start;display:flex;flex-direction:column;min-height:390px}
+#reviews .review-text{flex:1}
+#reviews .review-author{align-items:center}
+#reviews .review-avatar{width:40px;height:40px;font-size:12px;letter-spacing:.5px}
+#reviews .review-author h4{margin-bottom:2px}
+#reviews .review-designation{display:block;color:#d1b27c;font-size:10px;letter-spacing:.5px;margin:0 0 3px}
+#reviews .review-location{display:block!important;color:rgba(247,244,233,.55);font-size:10px;letter-spacing:.4px}
+#reviews .reviews-carousel-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:14px}
+#reviews .review-control{width:42px;height:42px;background:transparent;border:1px solid rgba(197,165,114,.45);color:#c5a572;font-size:18px;cursor:pointer;transition:.25s}
+#reviews .review-control:hover{background:#c5a572;color:#173d2a}
+#reviews .review-control-label{font-size:10px;letter-spacing:2px;color:rgba(247,244,233,.65);font-weight:700}
+@media(max-width:900px){#reviews .review-card{flex-basis:calc((100% - 24px)/2);min-height:380px}}
+@media(max-width:600px){#reviews .reviews-grid{gap:14px}#reviews .review-card{flex-basis:88%;min-height:0;padding:26px 22px}#reviews .review-text{min-height:0;font-size:16px}#reviews .reviews-carousel-controls{gap:13px}#reviews .review-control{width:38px;height:38px}#reviews .review-control-label{font-size:9px;letter-spacing:1.4px}}
