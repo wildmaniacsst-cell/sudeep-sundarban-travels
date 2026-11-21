@@ -60,6 +60,13 @@ body{font-family:'DM Sans',sans-serif;background:#f7f6f2;color:#1e2924;line-heig
 .stay-image img{width:100%;height:100%;min-height:460px;object-fit:cover;display:block}
 .stay-intro-copy p{color:#66716a;margin-bottom:18px}
 .stay-quote{border-left:3px solid #a28a59;padding-left:18px;margin-top:25px;color:#48574d;font-style:italic}
+/* resort photo gallery */
+.stay-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.stay-gallery-item{height:280px;overflow:hidden;border-radius:5px;background:#e3e7df}
+.stay-gallery-item img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s}
+.stay-gallery-item:hover img{transform:scale(1.04)}
+@media(max-width:900px){.stay-gallery{grid-template-columns:repeat(2,1fr)}.stay-gallery-item{height:240px}}
+@media(max-width:600px){.stay-gallery{grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}.stay-gallery-item{height:180px}}
 /* dark section */
 .stay-dark{background:#172a21;color:white}
 .stay-dark .stay-eyebrow{color:#b7c6b1}
@@ -165,13 +172,27 @@ body{font-family:'DM Sans',sans-serif;background:#f7f6f2;color:#1e2924;line-heig
 </section>
 <section class="stay-section" id="stay-experience">
  <div class="stay-container stay-intro-grid">
-  <div class="stay-image"><img src="sundarban%205.jpg" alt="Guest relaxing on a boat in the Sundarbans mangrove landscape" loading="lazy"></div>
+  <div class="stay-image"><img src="resort%203.jpg" alt="Nature-focused resort stay in the Sundarbans region" loading="lazy"></div>
   <div class="stay-intro-copy">
    <div class="stay-eyebrow">Beyond a place to sleep</div>
    <h2 class="stay-heading">Let the forest set the pace.</h2>
    <p>In the Sundarbans, the experience is shaped by tides, quiet waterways, changing light and the rhythms of life around the mangroves. A stay here can be more than a stop between safaris. It can be part of your connection to the landscape.</p>
    <p>We help guests plan their accommodation and wildlife exploration as one joined-up journey, with time to rest, observe and appreciate this fragile ecosystem.</p>
    <div class="stay-quote">“Come for the wildlife. Leave with a deeper sense of the place.”</div>
+  </div>
+ </div>
+</section>
+<section class="stay-section">
+ <div class="stay-container">
+  <div class="stay-eyebrow">Explore the stay gallery</div>
+  <h2 class="stay-heading">A glimpse of your nature stay.</h2>
+  <div class="stay-gallery" aria-label="Sundarbans nature stay photo gallery">
+   <div class="stay-gallery-item"><img src="resort%202.jpg" alt="Resort accommodation in the Sundarbans" loading="lazy"></div>
+   <div class="stay-gallery-item"><img src="resort%204.jpg" alt="Nature stay facilities surrounded by the Sundarbans landscape" loading="lazy"></div>
+   <div class="stay-gallery-item"><img src="resort%206.jpg" alt="Eco-style resort view in the Sundarbans region" loading="lazy"></div>
+   <div class="stay-gallery-item"><img src="resort%207.jpeg" alt="Sundarbans resort accommodation and outdoor surroundings" loading="lazy"></div>
+   <div class="stay-gallery-item"><img src="resort%208.jpeg" alt="Guest accommodation in a nature-focused Sundarbans stay" loading="lazy"></div>
+   <div class="stay-gallery-item"><img src="resort%209.jpeg" alt="Resort landscape and stay experience in the Sundarbans" loading="lazy"></div>
   </div>
  </div>
 </section>
