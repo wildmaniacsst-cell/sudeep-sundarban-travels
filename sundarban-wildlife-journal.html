@@ -1,1 +1,815 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sundarban Wildlife Journal | Field Stories, Tigers & Nature | Sudeep Sundarban Travels</title>
+
+    <meta name="description" content="Explore the Sundarbans through wildlife field stories, tiger tracking insights, birding guides, photography tips, mangrove ecology and local forest life from Sudeep Sundarban Travels.">
+
+    <meta name="keywords" content="Sundarban wildlife journal, Sundarbans wildlife stories, Sundarban tiger tracking, Sundarban wildlife photography, Sundarban birding guide, mangrove forest, Sundarbans field guide">
+
+    <meta name="author" content="Sudeep Sundarban Travels">
+
+    <link rel="canonical" href="https://wildmaniacsst-cell.github.io/sudeep-sundarban-travels/sundarban-wildlife-journal.html">
+
+    <meta property="og:title" content="Sundarban Wildlife Journal | Sudeep Sundarban Travels">
+    <meta property="og:description" content="Field stories, wildlife knowledge and authentic experiences from the mangrove wilderness of the Sundarbans.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wildmaniacsst-cell.github.io/sudeep-sundarban-travels/sundarban-wildlife-journal.html">
+    <meta property="og:image" content="https://wildmaniacsst-cell.github.io/sudeep-sundarban-travels/sundarban%202.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f5f5f0;
+            color: #18342c;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .journal-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        .journal-nav {
+            background: #102b24;
+            color: #fff;
+            padding: 18px 0;
+        }
+
+        .journal-nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .journal-brand {
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .journal-nav-links {
+            display: flex;
+            gap: 24px;
+            font-size: 13px;
+            color: #d3dfd8;
+        }
+
+        .journal-nav-links a:hover {
+            color: #c9a86a;
+        }
+
+        /* HERO */
+
+        .journal-hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(8,25,20,.88), rgba(8,25,20,.40)),
+                url("sundarban%202.jpg") center/cover no-repeat;
+            color: white;
+        }
+
+        .journal-hero-content {
+            max-width: 760px;
+            padding: 90px 0;
+        }
+
+        .journal-eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            color: #d2b67c;
+            margin-bottom: 22px;
+        }
+
+        .journal-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.12;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .journal-hero p {
+            max-width: 650px;
+            font-size: 17px;
+            color: #e0e8e2;
+            margin-bottom: 32px;
+        }
+
+        .journal-button {
+            display: inline-block;
+            background: #c4a46c;
+            color: #142820;
+            padding: 14px 25px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            transition: .25s;
+        }
+
+        .journal-button:hover {
+            background: #e0c28a;
+            transform: translateY(-2px);
+        }
+
+        /* INTRO */
+
+        .journal-intro {
+            padding: 90px 0 65px;
+            text-align: center;
+        }
+
+        .journal-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 500;
+            margin-bottom: 22px;
+        }
+
+        .journal-intro p {
+            max-width: 780px;
+            margin: auto;
+            color: #53675e;
+            font-size: 16px;
+        }
+
+        /* CATEGORY STRIP */
+
+        .journal-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .journal-category {
+            border: 1px solid #d5dcd5;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 12px;
+            color: #355347;
+            background: #fff;
+        }
+
+        /* FEATURED SECTION */
+
+        .journal-featured {
+            padding: 30px 0 100px;
+        }
+
+        .journal-section-heading {
+            margin-bottom: 38px;
+        }
+
+        .journal-section-heading span {
+            color: #9a8051;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .journal-section-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4vw, 45px);
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .journal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .journal-card {
+            background: #fff;
+            overflow: hidden;
+            border: 1px solid #e5e8e1;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .journal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(17, 44, 32, .08);
+        }
+
+        .journal-card-image {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .journal-card-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s;
+        }
+
+        .journal-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .journal-card-content {
+            padding: 28px;
+        }
+
+        .journal-card-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a1844d;
+            font-weight: 700;
+        }
+
+        .journal-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            line-height: 1.3;
+            font-weight: 500;
+            margin: 12px 0;
+        }
+
+        .journal-card p {
+            color: #66766d;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .journal-coming {
+            font-size: 11px;
+            font-weight: 700;
+            color: #748378;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FIELD PHILOSOPHY */
+
+        .journal-field-section {
+            background: #18382d;
+            color: #fff;
+            padding: 90px 0;
+        }
+
+        .journal-field-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .journal-field-image {
+            height: 480px;
+        }
+
+        .journal-field-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .journal-field-text .journal-eyebrow {
+            color: #d0b278;
+        }
+
+        .journal-field-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.2;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .journal-field-text p {
+            color: #c8d7ce;
+            margin-bottom: 18px;
+        }
+
+        /* EXPEDITION LINKS */
+
+        .journal-explore {
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .journal-explore h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .journal-explore p {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            color: #62736a;
+        }
+
+        .journal-explore-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .journal-explore-links a {
+            border: 1px solid #b8c5bb;
+            padding: 13px 22px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: .2s;
+        }
+
+        .journal-explore-links a:hover {
+            background: #18382d;
+            color: #fff;
+        }
+
+        /* FOOTER */
+
+        .journal-footer {
+            background: #102b24;
+            color: #d1ddd5;
+            padding: 35px 0;
+            text-align: center;
+        }
+
+        .journal-footer p {
+            font-size: 12px;
+        }
+
+        .journal-footer a {
+            color: #d1b276;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .journal-nav-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .journal-nav-links {
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 4px;
+                gap: 18px;
+            }
+
+            .journal-hero {
+                min-height: 500px;
+                background-position: center;
+            }
+
+            .journal-hero-content {
+                padding: 70px 0;
+            }
+
+            .journal-hero p {
+                font-size: 15px;
+            }
+
+            .journal-intro {
+                padding: 65px 0 45px;
+            }
+
+            .journal-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .journal-card-image {
+                height: 240px;
+            }
+
+            .journal-card-content {
+                padding: 22px;
+            }
+
+            .journal-card h3 {
+                font-size: 24px;
+            }
+
+            .journal-featured {
+                padding-bottom: 70px;
+            }
+
+            .journal-field-section {
+                padding: 65px 0;
+            }
+
+            .journal-field-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .journal-field-image {
+                height: 320px;
+            }
+
+            .journal-explore {
+                padding: 65px 0;
+            }
+
+            .journal-explore h2 {
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="journal-nav">
+        <div class="journal-container journal-nav-inner">
+
+            <a href="index.html" class="journal-brand">
+                SUDEEP SUNDARBAN TRAVELS
+            </a>
+
+            <div class="journal-nav-links">
+                <a href="index.html">Home</a>
+                <a href="sundarban-wildlife-expedition.html">Wildlife</a>
+                <a href="sundarban-wildlife-photography-tour.html">Photography</a>
+                <a href="sundarban-birding-expedition.html">Birding</a>
+                <a href="private-sundarban-tour.html">Private Tours</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="journal-hero">
+        <div class="journal-container">
+            <div class="journal-hero-content">
+
+                <div class="journal-eyebrow">
+                    Stories from the Mangrove Wilderness
+                </div>
+
+                <h1>Sundarban<br>Wildlife Journal</h1>
+
+                <p>
+                    Beyond the river journeys and wildlife safaris lies a world
+                    of stories waiting to be understood. Explore the wildlife,
+                    landscapes, people and field experiences of the Sundarbans.
+                </p>
+
+                <a href="#journal-stories" class="journal-button">
+                    EXPLORE THE JOURNAL
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- INTRO -->
+    <section class="journal-intro">
+        <div class="journal-container">
+
+            <h2>Stories Written by the Forest</h2>
+
+            <p>
+                The Sundarbans is more than a destination. It is a living,
+                changing wilderness shaped by tides, wildlife, mangroves and
+                the people who depend on it. This journal brings together
+                observations, knowledge and stories from years of exploring
+                its waterways and forest landscapes.
+            </p>
+
+            <div class="journal-categories">
+                <span class="journal-category">Wildlife</span>
+                <span class="journal-category">Tiger Tracking</span>
+                <span class="journal-category">Photography</span>
+                <span class="journal-category">Birding</span>
+                <span class="journal-category">Mangrove Ecology</span>
+                <span class="journal-category">Local Communities</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JOURNAL STORIES -->
+    <section class="journal-featured" id="journal-stories">
+        <div class="journal-container">
+
+            <div class="journal-section-heading">
+                <span>FIELD KNOWLEDGE & STORIES</span>
+                <h2>Explore the Sundarbans</h2>
+            </div>
+
+            <div class="journal-grid">
+
+                <!-- STORY 1 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="sundarban%20tiger%202.jpg"
+                             alt="Royal Bengal tiger in the Sundarbans mangrove wilderness"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Wildlife & Natural History</span>
+
+                        <h3>The Royal Bengal Tiger of Sundarbans</h3>
+
+                        <p>
+                            Discover the remarkable tiger that survives in one
+                            of the world's most challenging mangrove ecosystems.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 2 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="sundarban%20tiger%2015.jpg"
+                             alt="Sundarbans wildlife tracking and forest observation"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Field Tracking</span>
+
+                        <h3>Reading the Forest: Tiger Tracking & Signs</h3>
+
+                        <p>
+                            Learn how wildlife trackers observe footprints,
+                            forest signs and clues without disturbing animals.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 3 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="sundarban%20tiger%2012.jpg"
+                             alt="Wildlife photography in the Sundarbans"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Wildlife Photography</span>
+
+                        <h3>Wildlife Photography in the Sundarbans</h3>
+
+                        <p>
+                            Field techniques, camera preparation, light,
+                            patience and the realities of photographing
+                            wildlife in a tidal forest.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 4 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="black%20capped.jpg"
+                             alt="Birdlife of the Sundarbans mangrove forest"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Birdwatching</span>
+
+                        <h3>A Birdwatcher's Guide to the Sundarbans</h3>
+
+                        <p>
+                            Explore mangrove bird habitats, resident species,
+                            seasonal visitors and practical bird observation tips.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 5 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="sundarban%205.jpg"
+                             alt="Seasonal landscape and river waterways of the Sundarbans"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Seasonal Guide</span>
+
+                        <h3>Best Season for Sundarban Wildlife Photography</h3>
+
+                        <p>
+                            Understand the influence of seasons, weather,
+                            tides, light and changing forest conditions
+                            on a wildlife photography journey.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 6 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="sundarban%20fisherman%203.jpg"
+                             alt="Traditional livelihood and people living around Sundarbans"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">People & Forest</span>
+
+                        <h3>Life of the Honey Collectors</h3>
+
+                        <p>
+                            Explore the lives, traditions, challenges and
+                            forest knowledge of people who enter the mangroves
+                            to collect wild honey.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 7 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="sundarban%20fisherman%203.jpg"
+                             alt="People and traditional livelihoods in the Sundarbans"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Local Communities</span>
+
+                        <h3>The Hidden Lives of Sundarban Crab Collectors</h3>
+
+                        <p>
+                            A closer look at the people, waterways,
+                            livelihoods and risks associated with life
+                            around the mangrove creeks.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+                <!-- STORY 8 -->
+                <article class="journal-card">
+                    <div class="journal-card-image">
+                        <img src="BOAT%209.jpg"
+                             alt="Wildlife expedition boat navigating Sundarbans waterways"
+                             loading="lazy">
+                    </div>
+
+                    <div class="journal-card-content">
+                        <span class="journal-card-tag">Responsible Wildlife Tourism</span>
+
+                        <h3>Why Tiger Sightings Are Never Guaranteed</h3>
+
+                        <p>
+                            Understand why wildlife encounters cannot be
+                            scheduled and why responsible expeditions
+                            value the forest beyond sightings.
+                        </p>
+
+                        <span class="journal-coming">FIELD GUIDE COMING SOON</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FIELD PHILOSOPHY -->
+    <section class="journal-field-section">
+        <div class="journal-container journal-field-grid">
+
+            <div class="journal-field-image">
+                <img src="sundarban%20photography%203.jpg"
+                     alt="Field exploration and wildlife photography in the Sundarbans"
+                     loading="lazy">
+            </div>
+
+            <div class="journal-field-text">
+
+                <div class="journal-eyebrow">
+                    A Field-Based Perspective
+                </div>
+
+                <h2>Experience the forest. Understand the wilderness.</h2>
+
+                <p>
+                    Wildlife exploration is not simply about finding an animal.
+                    It is about understanding habitat, movement, behaviour,
+                    the rhythm of the tides and the relationship between
+                    the forest and its inhabitants.
+                </p>
+
+                <p>
+                    Through this journal, we share knowledge and experiences
+                    that help visitors look beyond a typical sightseeing trip
+                    and appreciate the Sundarbans as a living wilderness.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EXPLORE EXPEDITIONS -->
+    <section class="journal-explore">
+        <div class="journal-container">
+
+            <h2>Experience the Sundarbans Beyond the Stories</h2>
+
+            <p>
+                Explore our guided wildlife expeditions, photography journeys,
+                birding safaris and privately customised forest experiences.
+            </p>
+
+            <div class="journal-explore-links">
+
+                <a href="sundarban-wildlife-expedition.html">
+                    Wildlife Expeditions
+                </a>
+
+                <a href="sundarban-wildlife-photography-tour.html">
+                    Photography Expeditions
+                </a>
+
+                <a href="sundarban-birding-expedition.html">
+                    Birding Expeditions
+                </a>
+
+                <a href="private-sundarban-tour.html">
+                    Private & Custom Tours
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="journal-footer">
+        <div class="journal-container">
+
+            <p>
+                © Sudeep Sundarban Travels |
+                Exploring the Mangrove Wilderness Responsibly
+            </p>
+
+            <p style="margin-top:10px;">
+                <a href="index.html">Back to Home</a>
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>
+
