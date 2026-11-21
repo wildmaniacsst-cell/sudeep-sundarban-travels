@@ -3612,6 +3612,6 @@ footer .footer-main {
 /* MOBILE-ONLY TIGER FOCAL POSITION: keep face visible without changing desktop */
 @media (max-width: 600px){
   .site-footer::before{
-    background-position: 5% center;
+    background-position: 92% center;
   }
 }
