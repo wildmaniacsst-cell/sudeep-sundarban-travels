@@ -3608,3 +3608,10 @@ footer .footer-main {
 /* Keep footer content above the visible tiger backdrop */
 .site-footer .footer-grid,
 .site-footer .footer-bottom{position:relative;z-index:1;}
+
+/* MOBILE-ONLY TIGER FOCAL POSITION: keep face visible without changing desktop */
+@media (max-width: 600px){
+  .site-footer::before{
+    background-position: 5% center;
+  }
+}
