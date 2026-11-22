@@ -3725,3 +3725,28 @@ footer .footer-main {
 #reviews #reviewsTrack .review-card{flex:0 0 calc((100% - 48px)/3)!important;width:calc((100% - 48px)/3)!important;min-width:0!important;scroll-snap-align:start}
 @media(max-width:900px){#reviews #reviewsTrack .review-card{flex-basis:calc((100% - 24px)/2)!important;width:calc((100% - 24px)/2)!important}}
 @media(max-width:600px){#reviews #reviewsTrack{gap:14px!important}#reviews #reviewsTrack .review-card{flex-basis:88%!important;width:88%!important}}
+/* PACKAGE CARDS: fixed ~14cm desktop height, center Advanced green, aligned CTA */
+@media(min-width:901px){
+ #packages .package-card{height:530px!important;min-height:530px!important}
+ #packages .package-card-content{height:100%!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important}
+ #packages .package-button{margin-top:auto!important;flex-shrink:0}
+ #packages .package-grid{align-items:stretch}
+}
+#packages .package-card:nth-child(2){background:#183d2b!important;color:#f4f0e6!important}
+#packages .package-card:nth-child(2) .package-title,#packages .package-card:nth-child(2) .package-features li{color:#f4f0e6!important}
+#packages .package-card:nth-child(2) .package-description{color:rgba(244,240,230,.84)!important}
+#packages .package-card:nth-child(2) .feature-check{color:#c5a572!important}
+#packages .package-card:nth-child(2) .package-button{background:#c5a572!important;color:#183d2b!important;border-color:#c5a572!important}
+#packages .package-card:nth-child(2) .duration-option{color:#f4f0e6!important;border-color:rgba(244,240,230,.3)!important;background:rgba(244,240,230,.06)!important}
+#packages .package-card:nth-child(2) .duration-option.is-selected{background:#c5a572!important;color:#183d2b!important}
+@media(max-width:900px){#packages .package-card{height:auto!important;min-height:0!important}}
+/* REVIEW CAROUSEL repair: valid markup, restored three general feedback cards + five supplied reviews */
+#reviews .reviews-carousel{overflow:hidden;width:100%}
+#reviews #reviewsTrack{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;scroll-behavior:smooth!important;touch-action:pan-x!important;gap:22px!important;width:100%;scrollbar-width:none!important}
+#reviews #reviewsTrack::-webkit-scrollbar{display:none!important}
+#reviews #reviewsTrack .review-card{flex:0 0 calc((100% - 44px)/3)!important;width:calc((100% - 44px)/3)!important;min-width:0!important;scroll-snap-align:start!important;box-sizing:border-box!important}
+#reviews .review-generic{border:1px solid rgba(197,165,114,.45)}
+#reviews .review-source-label{display:block;font-size:10px;letter-spacing:1.6px;font-weight:700;color:#b88b4d;margin-bottom:12px}
+#reviews .review-text{line-height:1.65}
+@media(max-width:900px){#reviews #reviewsTrack .review-card{flex-basis:calc((100% - 22px)/2)!important;width:calc((100% - 22px)/2)!important}}
+@media(max-width:600px){#reviews #reviewsTrack{gap:14px!important}#reviews #reviewsTrack .review-card{flex-basis:88%!important;width:88%!important}}
