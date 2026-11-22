@@ -1506,31 +1506,25 @@
  start();
 })();
 </script>
+
+
 <script>
 (function(){
- const track=document.getElementById('reviewsTrack'),prev=document.getElementById('reviewsPrev'),next=document.getElementById('reviewsNext');
- if(!track||!prev||!next)return;
- let timer=null;
- const step=()=>{const card=track.querySelector('.review-card');if(!card)return 0;return card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0)};
- const move=d=>track.scrollBy({left:step()*d,behavior:'smooth'});
- prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
- const pause=()=>{if(timer){clearInterval(timer);timer=null}};
- const start=()=>{pause();timer=setInterval(()=>{const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-8)track.scrollTo({left:0,behavior:'smooth'});else move(1)},5600)};
- track.addEventListener('mouseenter',pause);track.addEventListener('mouseleave',start);track.addEventListener('focusin',pause);track.addEventListener('focusout',start);start();
-})();
-</script>
-<script>
-(function(){
- const track=document.getElementById('reviewsTrack'),prev=document.getElementById('reviewsPrev'),next=document.getElementById('reviewsNext');
- if(!track||!prev||!next)return;
- const step=()=>{const card=track.querySelector('.review-card');return card?card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0):track.clientWidth;};
- const move=d=>track.scrollBy({left:step()*d,behavior:'smooth'});
- prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
- let timer,paused=false;
- const start=()=>{clearInterval(timer);timer=setInterval(()=>{if(paused)return;const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-6)track.scrollTo({left:0,behavior:'smooth'});else move(1);},5200)};
- const stop=()=>paused=true, resume=()=>paused=false;
- track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',resume);track.addEventListener('focusin',stop);track.addEventListener('focusout',resume);
- start();
+ const track=document.getElementById("reviewsTrack");
+ const prev=document.getElementById("reviewsPrev");
+ const next=document.getElementById("reviewsNext");
+ if(!track||!prev||!next||track.dataset.carouselReady)return;
+ track.dataset.carouselReady="true";
+ const step=()=>{const card=track.querySelector(".review-card");return card?card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0):track.clientWidth*.8};
+ const max=()=>Math.max(0,track.scrollWidth-track.clientWidth);
+ const move=d=>{const m=max();if(!m)return;let target=track.scrollLeft+step()*d;if(target>=m-4)target=0;if(target<0)target=m;track.scrollTo({left:target,behavior:"smooth"})};
+ prev.addEventListener("click",()=>move(-1));next.addEventListener("click",()=>move(1));
+ let timer;let paused=false;const pause=()=>paused=true;const resume=()=>paused=false;
+ const restart=()=>{clearInterval(timer);timer=setInterval(()=>{if(!paused&&max()>8)move(1)},5000)};
+ track.addEventListener("mouseenter",pause);track.addEventListener("mouseleave",resume);
+ track.addEventListener("touchstart",pause,{passive:true});track.addEventListener("touchend",resume,{passive:true});
+ prev.addEventListener("mouseenter",pause);next.addEventListener("mouseenter",pause);prev.addEventListener("mouseleave",resume);next.addEventListener("mouseleave",resume);
+ restart();window.addEventListener("resize",restart);
 })();
 </script>
 <script src="script.js"></script>
@@ -2209,33 +2203,8 @@
  start();
 })();
 </script>
-<script>
-(function(){
- const track=document.getElementById('reviewsTrack'),prev=document.getElementById('reviewsPrev'),next=document.getElementById('reviewsNext');
- if(!track||!prev||!next)return;
- let timer=null;
- const step=()=>{const card=track.querySelector('.review-card');if(!card)return 0;return card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0)};
- const move=d=>track.scrollBy({left:step()*d,behavior:'smooth'});
- prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
- const pause=()=>{if(timer){clearInterval(timer);timer=null}};
- const start=()=>{pause();timer=setInterval(()=>{const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-8)track.scrollTo({left:0,behavior:'smooth'});else move(1)},5600)};
- track.addEventListener('mouseenter',pause);track.addEventListener('mouseleave',start);track.addEventListener('focusin',pause);track.addEventListener('focusout',start);start();
-})();
-</script>
-<script>
-(function(){
- const track=document.getElementById('reviewsTrack'),prev=document.getElementById('reviewsPrev'),next=document.getElementById('reviewsNext');
- if(!track||!prev||!next)return;
- const step=()=>{const card=track.querySelector('.review-card');return card?card.getBoundingClientRect().width+(parseFloat(getComputedStyle(track).gap)||0):track.clientWidth;};
- const move=d=>track.scrollBy({left:step()*d,behavior:'smooth'});
- prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
- let timer,paused=false;
- const start=()=>{clearInterval(timer);timer=setInterval(()=>{if(paused)return;const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-6)track.scrollTo({left:0,behavior:'smooth'});else move(1);},5200)};
- const stop=()=>paused=true, resume=()=>paused=false;
- track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',resume);track.addEventListener('focusin',stop);track.addEventListener('focusout',resume);
- start();
-})();
-</script>
+
+
 <script src="script.js"></script>
 
 </body>
