@@ -179,7 +179,7 @@ function renderPackages(packages) {
         "Eco-guide fees",
         "Extended wildlife exploration"
       ];
-      durationDisplay = '<div class="duration-choice-group" data-options="3 Nights / 3 Days|4 Nights / 4 Days"><button type="button" class="duration-option is-selected" data-duration="3 Nights / 3 Days">3 Nights / 3 Days</button><button type="button" class="duration-option" data-duration="4 Nights / 4 Days">4 Nights / 4 Days</button></div>';
+      durationDisplay = '<div class="duration-choice-group" data-options="3 Nights / 4 Days|4 Nights / 5 Days"><button type="button" class="duration-option is-selected" data-duration="3 Nights / 4 Days">3 Nights / 4 Days</button><button type="button" class="duration-option" data-duration="4 Nights / 5 Days">4 Nights / 5 Days</button></div>';
     } else if (tierName.includes("ultimate adventure")) {
       displayFeatures = [
         "Houseboat / eco-resort accommodation",
@@ -199,15 +199,9 @@ function renderPackages(packages) {
     if (tierName.includes("basic jungle")) card.classList.add("package-basic");
     if (tierName.includes("ultimate adventure")) card.classList.add("package-ultimate");
 
-    if (index === 1) {
-      card.classList.add("package-popular");
-    }
+    // All packages use a consistent card hierarchy without a Popular badge.
 
     card.innerHTML = `
-      ${index === 1 ? `
-        <span class="package-badge">Popular</span>
-      ` : ""}
-
       <div class="package-card-content">
         <h3 class="package-title">${escapeHTML(pkg.name || "Wildlife Expedition")}</h3>
 
