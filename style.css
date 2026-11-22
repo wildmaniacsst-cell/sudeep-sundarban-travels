@@ -3767,3 +3767,35 @@ footer .footer-main {
  #packages .package-duration,#packages .duration-choice-group{margin-bottom:7px!important}
  #packages .package-button{margin-top:auto!important;min-height:42px!important;display:block!important;visibility:visible!important;opacity:1!important}
 }
+
+
+/* SPACING REFINEMENT: tighten oversized gaps between homepage sections */
+.guest-reviews.section-padding {
+    padding-top: 64px;
+    padding-bottom: 42px;
+}
+.wildlife-journal.section-padding {
+    padding-top: 68px;
+    padding-bottom: 68px;
+}
+.booking-section.section-padding {
+    padding-top: 68px;
+    padding-bottom: 68px;
+}
+#reviews .reviews-carousel-controls {
+    margin-top: 12px !important;
+}
+@media (max-width: 600px) {
+    .guest-reviews.section-padding {
+        padding-top: 48px;
+        padding-bottom: 32px;
+    }
+    .wildlife-journal.section-padding {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    .booking-section.section-padding {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
