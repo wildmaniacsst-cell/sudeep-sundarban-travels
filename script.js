@@ -155,18 +155,36 @@ function renderPackages(packages) {
   packages.forEach((pkg, index) => {
     const features = parseFeatures(pkg.features);
     const tierName = String(pkg.name || "").toLowerCase();
-    const standardInclusions = [
-      "Eco-resort accommodation",
-      "Indian & Continental cuisine as per meal plan",
-      "Kolkata pick-up and drop as per itinerary",
-      "Forest entry / permit fees",
-      "Eco-guide fees",
-      "Boat safari / cruise as per itinerary"
-    ];
-    const addStandardInclusions = tierName.includes("basic jungle") || tierName.includes("ultimate adventure");
-    const displayFeatures = addStandardInclusions
-      ? [...new Set([...features, ...standardInclusions])]
-      : features;
+    let displayFeatures = features;
+    let durationDisplay = escapeHTML(pkg.duration || "");
+
+    if (tierName.includes("basic jungle")) {
+      displayFeatures = features.filter(feature => !/guided tour/i.test(feature));
+      durationDisplay = '<span class="duration-option">1 Night / 2 Days</span><span class="duration-option">2 Nights / 3 Days</span>';
+    } else if (tierName.includes("advanced wildlife") || tierName.includes("wildlife expedition")) {
+      displayFeatures = [
+        "Naturalist-guided tour",
+        "All meals as per itinerary",
+        "Houseboat accommodation",
+        "Indian & Continental cuisine as per meal plan",
+        "Kolkata pick-up and drop as per itinerary",
+        "Forest entry / permit fees",
+        "Eco-guide fees",
+        "Boat safari / cruise as per itinerary"
+      ];
+    } else if (tierName.includes("ultimate adventure")) {
+      displayFeatures = [
+        "Houseboat / eco-resort accommodation",
+        "Expert naturalist-guided tour",
+        "Photographic assistance",
+        "Exclusive safari boat access",
+        "Indian & Continental cuisine as per meal plan",
+        "Kolkata pick-up and drop as per itinerary",
+        "Forest entry / permit fees",
+        "Eco-guide fees",
+        "Boat safari / cruise as per itinerary"
+      ];
+    }
 
     const card = document.createElement("article");
     card.className = "package-card";
@@ -185,13 +203,8 @@ function renderPackages(packages) {
       <div class="package-card-content">
         <h3 class="package-title">${escapeHTML(pkg.name || "Wildlife Expedition")}</h3>
 
-        <div class="package-price">
-          <span class="price-amount">${formatCurrency(pkg.price)}</span>
-          <span class="price-label">per person</span>
-        </div>
-
         <div class="package-duration">
-          ${escapeHTML(pkg.duration || "")}
+          ${durationDisplay}
         </div>
 
         <p class="package-description">
