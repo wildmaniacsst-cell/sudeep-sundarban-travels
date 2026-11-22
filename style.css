@@ -3837,3 +3837,23 @@ footer .footer-main {
     min-height: 540px !important;
   }
 }
+
+
+/* FINAL GUEST REVIEW CARD SIZE NORMALIZATION */
+#reviews #reviewsTrack { align-items: stretch !important; }
+#reviews #reviewsTrack .review-card {
+  height: 520px !important;
+  min-height: 520px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+#reviews #reviewsTrack .review-text {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+#reviews #reviewsTrack .review-author { margin-top: auto !important; flex-shrink: 0 !important; }
+@media (max-width: 600px) {
+  #reviews #reviewsTrack .review-card { height: 540px !important; min-height: 540px !important; }
+}
