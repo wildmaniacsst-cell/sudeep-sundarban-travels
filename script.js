@@ -185,7 +185,6 @@ function renderPackages(packages) {
       displayFeatures = [
         "Houseboat / eco-resort accommodation",
         "Expert naturalist-guided tour",
-        "Photographic assistance",
         "Exclusive safari boat access",
         "Indian & Continental cuisine as per meal plan",
         "Kolkata pick-up and drop as per itinerary",
