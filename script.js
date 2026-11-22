@@ -181,6 +181,7 @@ function renderPackages(packages) {
       ];
       durationDisplay = '<div class="duration-choice-group" data-options="3 Nights / 4 Days|4 Nights / 5 Days"><button type="button" class="duration-option is-selected" data-duration="3 Nights / 4 Days">3 Nights / 4 Days</button><button type="button" class="duration-option" data-duration="4 Nights / 5 Days">4 Nights / 5 Days</button></div>';
     } else if (tierName.includes("ultimate adventure")) {
+      durationDisplay = '<div class="duration-choice-group"><button type="button" class="duration-option is-selected" data-duration="Custom / Extended">Custom / Extended</button><button type="button" class="duration-option" data-duration="5 Nights / 5 Days">5 Nights / 5 Days</button></div>';
       displayFeatures = [
         "Houseboat / eco-resort accommodation",
         "Expert naturalist-guided tour",
