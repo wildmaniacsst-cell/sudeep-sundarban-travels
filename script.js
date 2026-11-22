@@ -154,9 +154,24 @@ function renderPackages(packages) {
 
   packages.forEach((pkg, index) => {
     const features = parseFeatures(pkg.features);
+    const tierName = String(pkg.name || "").toLowerCase();
+    const standardInclusions = [
+      "Eco-resort accommodation",
+      "Indian & Continental cuisine as per meal plan",
+      "Kolkata pick-up and drop as per itinerary",
+      "Forest entry / permit fees",
+      "Eco-guide fees",
+      "Boat safari / cruise as per itinerary"
+    ];
+    const addStandardInclusions = tierName.includes("basic jungle") || tierName.includes("ultimate adventure");
+    const displayFeatures = addStandardInclusions
+      ? [...new Set([...features, ...standardInclusions])]
+      : features;
 
     const card = document.createElement("article");
     card.className = "package-card";
+    if (tierName.includes("basic jungle")) card.classList.add("package-basic");
+    if (tierName.includes("ultimate adventure")) card.classList.add("package-ultimate");
 
     if (index === 1) {
       card.classList.add("package-popular");
@@ -184,9 +199,9 @@ function renderPackages(packages) {
         </p>
 
         ${
-          features.length
+          displayFeatures.length
             ? `<ul class="package-features">
-                ${features.map(feature => `
+                ${displayFeatures.map(feature => `
                   <li>
                     <span class="feature-check">✓</span>
                     ${escapeHTML(feature)}
