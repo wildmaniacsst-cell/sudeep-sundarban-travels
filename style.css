@@ -7,6 +7,7 @@
 
 /* ---------- GOOGLE FONTS ---------- */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap');
 
 
 /* ---------- ROOT VARIABLES ---------- */
@@ -3633,7 +3634,7 @@ footer .footer-main {
 #packages .packages-bottom-note{flex-wrap:wrap}
 
 /* PACKAGE SECTION: TYPOGRAPHY, COMPACT FEATURES, RESPONSIVE FIT */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap');
+
 #packages .package-title,#packages .package-card-content h3{font-family:'Cormorant Garamond',Georgia,serif!important;font-size:clamp(1.65rem,2.1vw,2.15rem);font-weight:600;line-height:1.12;letter-spacing:.15px}
 #packages .package-card,#packages .package-card-content,#packages .package-description,#packages .package-features,#packages .package-features li,#packages .package-button,#packages .package-duration{font-family:'Manrope',Arial,sans-serif!important}
 #packages .package-duration{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
