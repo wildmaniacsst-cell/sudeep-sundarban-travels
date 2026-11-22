@@ -159,19 +159,27 @@ function renderPackages(packages) {
     let durationDisplay = escapeHTML(pkg.duration || "");
 
     if (tierName.includes("basic jungle")) {
-      displayFeatures = features.filter(feature => !/guided tour/i.test(feature));
-      durationDisplay = '<span class="duration-option">1 Night / 2 Days</span><span class="duration-option">2 Nights / 3 Days</span>';
-    } else if (tierName.includes("advanced wildlife") || tierName.includes("wildlife expedition")) {
       displayFeatures = [
-        "Naturalist-guided tour",
-        "All meals as per itinerary",
-        "Houseboat accommodation",
-        "Indian & Continental cuisine as per meal plan",
-        "Kolkata pick-up and drop as per itinerary",
+        "Eco-resort accommodation",
+        "Indian & Continental cuisines",
+        "Kolkata pick-up & drop",
+        "Boat safari",
         "Forest entry / permit fees",
         "Eco-guide fees",
-        "Boat safari / cruise as per itinerary"
+        "All inclusions as per itinerary"
       ];
+      durationDisplay = '<div class="duration-choice-group" data-options="1 Night / 2 Days|2 Nights / 3 Days"><button type="button" class="duration-option is-selected" data-duration="1 Night / 2 Days">1 Night / 2 Days</button><button type="button" class="duration-option" data-duration="2 Nights / 3 Days">2 Nights / 3 Days</button></div>';
+    } else if (tierName.includes("advanced wildlife") || tierName.includes("wildlife expedition")) {
+      displayFeatures = [
+        "Eco-resort / houseboat accommodation as selected",
+        "Indian & Continental cuisines",
+        "Kolkata pick-up & drop",
+        "Boat safari",
+        "Forest entry / permit fees",
+        "Eco-guide fees",
+        "Extended wildlife exploration"
+      ];
+      durationDisplay = '<div class="duration-choice-group" data-options="3 Nights / 3 Days|4 Nights / 4 Days"><button type="button" class="duration-option is-selected" data-duration="3 Nights / 3 Days">3 Nights / 3 Days</button><button type="button" class="duration-option" data-duration="4 Nights / 4 Days">4 Nights / 4 Days</button></div>';
     } else if (tierName.includes("ultimate adventure")) {
       displayFeatures = [
         "Houseboat / eco-resort accommodation",
@@ -237,11 +245,22 @@ function renderPackages(packages) {
     packageGrid.appendChild(card);
   });
 
+  // Duration selectors within package cards
+  packageGrid.querySelectorAll(".duration-option").forEach(option => {
+    option.addEventListener("click", () => {
+      const group = option.closest(".duration-choice-group");
+      if (group) group.querySelectorAll(".duration-option").forEach(item => item.classList.remove("is-selected"));
+      option.classList.add("is-selected");
+    });
+  });
+
   // Attach package buttons
   packageGrid.querySelectorAll(".package-button").forEach(button => {
     button.addEventListener("click", () => {
       const packageName = button.dataset.packageName || "";
-      selectPackage(packageName);
+      const card = button.closest(".package-card");
+      const selectedDuration = card?.querySelector(".duration-option.is-selected")?.dataset.duration;
+      selectPackage(selectedDuration ? `${packageName} | ${selectedDuration}` : packageName);
     });
   });
 }
