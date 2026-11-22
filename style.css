@@ -3699,3 +3699,29 @@ footer .footer-main {
 @media(max-width:600px){#reviews .review-card{flex-basis:100%}}
 
 #reviews .review-source-label{font-size:10px;letter-spacing:2px;font-weight:700;color:#c5a572}
+/* COMPACT PACKAGE CARDS, REMOVE POPULAR TAG AND ALIGN ENQUIRY BUTTONS */
+#packages .package-badge{display:none!important}
+#packages .package-card{min-height:445px!important;height:445px!important}
+#packages .package-card-content{height:100%;min-height:0;display:flex;flex-direction:column;padding:20px 20px 18px!important}
+#packages .package-title{margin-bottom:10px!important;font-size:clamp(23px,1.8vw,27px)!important}
+#packages .package-description{font-size:11.5px!important;line-height:1.45!important;margin-bottom:9px!important}
+#packages .package-features{margin-bottom:10px!important}
+#packages .package-features li{font-size:11px!important;line-height:1.28!important;padding:3px 0 3px 19px!important}
+#packages .package-duration{margin-bottom:10px!important;padding:4px 6px!important}
+#packages .package-button{margin-top:auto!important;min-height:42px!important}
+#packages .package-popular,#packages .package-middle{background:#183d2b;color:#f4f0e6}
+#packages .package-popular .package-title,#packages .package-middle .package-title{color:#f4f0e6}
+#packages .package-popular .package-features li,#packages .package-middle .package-features li{color:#f4f0e6}
+#packages .package-popular .package-description,#packages .package-middle .package-description{color:rgba(244,240,230,.82)}
+#packages .package-popular .package-button,#packages .package-middle .package-button{background:#c5a572;color:#183d2b;border-color:#c5a572}
+#packages .duration-choice-group{gap:5px;margin-bottom:10px!important}
+#packages .duration-option{padding:6px 7px!important;font-size:9.5px!important}
+@media(max-width:900px){#packages .package-card{height:auto!important;min-height:0!important}#packages .package-card-content{height:auto;padding:20px!important}}
+@media(max-width:600px){#packages .package-card-content{padding:22px!important}#packages .package-features li{font-size:12px!important;padding:4px 0 4px 20px!important}#packages .package-button{min-height:46px!important}}
+/* REVIEW CAROUSEL: single script, responsive horizontal overflow */
+#reviews .reviews-carousel{overflow:hidden}
+#reviews #reviewsTrack{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;scroll-snap-type:x mandatory!important;scroll-behavior:smooth!important;touch-action:pan-x!important;max-width:100%;scrollbar-width:none;gap:24px!important}
+#reviews #reviewsTrack::-webkit-scrollbar{display:none}
+#reviews #reviewsTrack .review-card{flex:0 0 calc((100% - 48px)/3)!important;width:calc((100% - 48px)/3)!important;min-width:0!important;scroll-snap-align:start}
+@media(max-width:900px){#reviews #reviewsTrack .review-card{flex-basis:calc((100% - 24px)/2)!important;width:calc((100% - 24px)/2)!important}}
+@media(max-width:600px){#reviews #reviewsTrack{gap:14px!important}#reviews #reviewsTrack .review-card{flex-basis:88%!important;width:88%!important}}
