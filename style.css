@@ -3697,3 +3697,5 @@ footer .footer-main {
 #reviews .review-location{display:block;margin-top:4px}
 @media(max-width:900px){#reviews .review-card{flex-basis:calc((100% - 25px)/2)}}
 @media(max-width:600px){#reviews .review-card{flex-basis:100%}}
+
+#reviews .review-source-label{font-size:10px;letter-spacing:2px;font-weight:700;color:#c5a572}
