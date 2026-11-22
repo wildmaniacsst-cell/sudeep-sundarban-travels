@@ -3616,3 +3616,18 @@ footer .footer-main {
     background-position: 81% center;
   }
 }
+
+/* CLASSIC PREMIUM PACKAGE CARDS: GOLD TIERS */
+#packages .package-title,#packages .package-card-content h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;letter-spacing:.15px}
+#packages .package-basic,#packages .package-ultimate{background:#c5a572;color:#183d2b;border-color:#c5a572}
+#packages .package-basic .package-title,#packages .package-ultimate .package-title,#packages .package-basic .price-amount,#packages .package-ultimate .price-amount{color:#183d2b}
+#packages .package-basic .price-label,#packages .package-ultimate .price-label{color:rgba(24,61,43,.68)}
+#packages .package-basic .package-duration,#packages .package-ultimate .package-duration{background:rgba(24,61,43,.08);color:#34513e}
+#packages .package-basic .package-description,#packages .package-ultimate .package-description{color:#415847}
+#packages .package-basic .package-features li,#packages .package-ultimate .package-features li{color:#263f30}
+#packages .package-basic .feature-check,#packages .package-ultimate .feature-check{color:#183d2b}
+#packages .package-basic .package-button,#packages .package-ultimate .package-button{background:#183d2b;color:#f4f0e6;border-color:#183d2b}
+#packages .package-basic .package-button:hover,#packages .package-ultimate .package-button:hover{background:#f4f0e6;color:#183d2b;border-color:#f4f0e6}
+#packages .package-popular{background:#183d2b;color:#f4f0e6;border-color:#183d2b}
+#packages .packages-terms-note{margin-top:18px;font-size:12px;line-height:1.8;color:#68756a;font-style:italic;flex-basis:100%}
+#packages .packages-bottom-note{flex-wrap:wrap}
