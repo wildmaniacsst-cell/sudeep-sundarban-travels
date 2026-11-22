@@ -3750,3 +3750,20 @@ footer .footer-main {
 #reviews .review-text{line-height:1.65}
 @media(max-width:900px){#reviews #reviewsTrack .review-card{flex-basis:calc((100% - 22px)/2)!important;width:calc((100% - 22px)/2)!important}}
 @media(max-width:600px){#reviews #reviewsTrack{gap:14px!important}#reviews #reviewsTrack .review-card{flex-basis:88%!important;width:88%!important}}
+
+/* Compact review cards and fit all package CTAs */
+#reviews #reviewsTrack{align-items:flex-start!important}
+#reviews #reviewsTrack .review-card{height:auto!important;min-height:0!important;padding:20px 20px 18px!important}
+#reviews #reviewsTrack .review-text{flex:0 0 auto!important;margin-bottom:10px!important;line-height:1.5!important}
+#reviews #reviewsTrack .review-author{margin-top:8px!important}
+@media(max-width:900px){#reviews #reviewsTrack .review-card{padding:18px!important}}
+@media(min-width:901px){
+ #packages .package-card{height:530px!important;min-height:530px!important}
+ #packages .package-card-content{height:100%!important;padding:14px 18px 16px!important;display:flex!important;flex-direction:column!important;box-sizing:border-box!important}
+ #packages .package-title{font-size:23px!important;margin-bottom:7px!important}
+ #packages .package-description{font-size:11px!important;line-height:1.3!important;margin-bottom:6px!important}
+ #packages .package-features{margin:0 0 8px!important}
+ #packages .package-features li{padding:2px 0 2px 19px!important;line-height:1.2!important;font-size:10.5px!important}
+ #packages .package-duration,#packages .duration-choice-group{margin-bottom:7px!important}
+ #packages .package-button{margin-top:auto!important;min-height:42px!important;display:block!important;visibility:visible!important;opacity:1!important}
+}
