@@ -3799,3 +3799,17 @@ footer .footer-main {
         padding-bottom: 48px;
     }
 }
+
+
+/* Five-star treatment for authentic guest review cards */
+#reviews .review-stars {
+  color: #c9a46b;
+  font-size: 19px;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin: 0 0 14px;
+  text-shadow: 0 0 1px rgba(201,164,107,.18);
+}
+@media (max-width:600px) {
+  #reviews .review-stars { font-size: 18px; margin-bottom: 12px; }
+}
