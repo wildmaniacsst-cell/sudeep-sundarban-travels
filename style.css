@@ -3860,3 +3860,21 @@ footer .footer-main {
 @media (max-width: 600px) {
   #reviews #reviewsTrack .review-card { height: 540px !important; min-height: 540px !important; }
 }
+
+
+/* ===== MOBILE MENU VISIBILITY + HAMBURGER FIX =====
+.mobile-nav-links{display:none}
+#menuToggle{border:0!important;padding:10px!important;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:6px;border-radius:4px;line-height:1;}
+#menuToggle span{display:block!important;width:27px;height:2px;background:#173d2a!important;border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
+#menuToggle.active span:first-child{transform:translateY(8px) rotate(45deg)}
+#menuToggle.active span:nth-child(2){opacity:0}
+#menuToggle.active span:last-child{transform:translateY(-8px) rotate(-45deg)}
+#menuToggle:focus-visible{outline:2px solid #c96b32;outline-offset:3px}
+@media(max-width:768px){
+  #header .nav-container{position:relative;}
+  #menuToggle{display:flex!important;flex-shrink:0;}
+  #mainNav{max-height:calc(100dvh - var(--header-height));overflow-y:auto;}
+  .mobile-nav-links{display:flex;flex-direction:column;margin:0 0 8px;padding:0;border-bottom:1px solid var(--border);}
+  .mobile-nav-links a{padding:12px 0!important;border-bottom:1px solid var(--border);font-size:14px!important;}
+  .mobile-nav-links a:last-child{border-bottom:0;}
+}
