@@ -130,6 +130,7 @@ function renderPackages() {
        "Eco-resort or houseboat accommodation, as selected",
        "Meals during the expedition",
        "Forest permits and applicable fees",
+       "Kolkata pickup and drop",
        "Local coordination and tour assistance",
        "Arrive the evening before the first safari day"
       ],
@@ -145,7 +146,8 @@ function renderPackages() {
       features: [
         "Extended wildlife exploration",
        "Naturalist-guided expedition",
-       "Preferred houseboat accommodation",
+       "Luxury eco-resort accommodation",
+       "Kolkata pickup and drop",
        "Village walk and local livelihood insights",
        "Meals and safari arrangements as per itinerary",
        "Forest permits and applicable fees",
