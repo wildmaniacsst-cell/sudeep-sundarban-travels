@@ -3862,7 +3862,7 @@ footer .footer-main {
 }
 
 
-/* ===== MOBILE MENU VISIBILITY + HAMBURGER FIX =====
+/* ===== MOBILE MENU VISIBILITY + HAMBURGER FIX ===== */
 .mobile-nav-links{display:none}
 #menuToggle{border:0!important;padding:10px!important;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:6px;border-radius:4px;line-height:1;}
 #menuToggle span{display:block!important;width:27px;height:2px;background:#173d2a!important;border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
