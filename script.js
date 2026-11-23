@@ -86,176 +86,99 @@ function initializeNavigation() {
 // GOOGLE SHEETS - LOAD TOUR PACKAGES
 // ============================================
 
-async function initializePackages() {
-  const packageGrid = document.getElementById("packageGrid");
-  const packageLoading = document.getElementById("packageLoading");
-
-  if (!packageGrid) return;
-
-  try {
-    const response = await fetch(SST_CONFIG.apiUrl, {
-      method: "GET",
-      cache: "no-cache"
-    });
-
-    if (!response.ok) {
-      throw new Error("Package API returned an error.");
-    }
-
-    const data = await response.json();
-
-    if (!data.success || !Array.isArray(data.packages)) {
-      throw new Error("Invalid package data.");
-    }
-
-    const activePackages = data.packages
-      .filter(pkg => pkg.active !== false)
-      .sort((a, b) => {
-        return Number(a.displayOrder || 999) -
-               Number(b.displayOrder || 999);
-      });
-
-    renderPackages(activePackages);
-
-  } catch (error) {
-    console.error("Package loading error:", error);
-
-    if (packageLoading) {
-      packageLoading.textContent =
-        "Our tour packages are temporarily unavailable. Please contact us directly.";
-    }
-  }
+function initializePackages() {
+  renderPackages();
 }
 
 // ============================================
-// RENDER PACKAGE CARDS
+// RENDER FIXED EXPEDITION PACKAGE CARDS
 // ============================================
 
-function renderPackages(packages) {
+function renderPackages() {
   const packageGrid = document.getElementById("packageGrid");
-  const packageLoading = document.getElementById("packageLoading");
-
   if (!packageGrid) return;
 
-  if (packageLoading) {
-    packageLoading.style.display = "none";
-  }
-
-  packageGrid.innerHTML = "";
-
-  if (!packages.length) {
-    packageGrid.innerHTML = `
-      <div class="package-empty">
-        <p>Tour packages will be updated shortly.</p>
-      </div>
-    `;
-    return;
-  }
-
-  packages.forEach((pkg, index) => {
-    const features = parseFeatures(pkg.features);
-    const tierName = String(pkg.name || "").toLowerCase();
-    let displayFeatures = features;
-    let durationDisplay = escapeHTML(pkg.duration || "");
-
-    if (tierName.includes("basic jungle")) {
-      displayFeatures = [
-        "Eco-resort accommodation",
-        "Indian & Continental cuisines",
-        "Kolkata pick-up & drop",
-        "Boat safari",
-        "Forest entry / permit fees",
-        "Eco-guide fees",
-        "All inclusions as per itinerary"
-      ];
-      durationDisplay = '<div class="duration-choice-group" data-options="1 Night / 2 Days|2 Nights / 3 Days"><button type="button" class="duration-option is-selected" data-duration="1 Night / 2 Days">1 Night / 2 Days</button><button type="button" class="duration-option" data-duration="2 Nights / 3 Days">2 Nights / 3 Days</button></div>';
-    } else if (tierName.includes("advanced wildlife") || tierName.includes("wildlife expedition")) {
-      displayFeatures = [
-        "Eco-resort / houseboat accommodation as selected",
-        "Indian & Continental cuisines",
-        "Kolkata pick-up & drop",
-        "Boat safari",
-        "Forest entry / permit fees",
-        "Eco-guide fees",
-        "Extended wildlife exploration"
-      ];
-      durationDisplay = '<div class="duration-choice-group" data-options="3 Nights / 4 Days|4 Nights / 5 Days"><button type="button" class="duration-option is-selected" data-duration="3 Nights / 4 Days">3 Nights / 4 Days</button><button type="button" class="duration-option" data-duration="4 Nights / 5 Days">4 Nights / 5 Days</button></div>';
-    } else if (tierName.includes("ultimate adventure")) {
-      durationDisplay = '<div class="duration-choice-group"><button type="button" class="duration-option is-selected" data-duration="Custom / Extended">Custom / Extended</button><button type="button" class="duration-option" data-duration="5 Nights / 5 Days">5 Nights / 5 Days</button></div>';
-      displayFeatures = [
-        "Houseboat / eco-resort accommodation",
-        "Expert naturalist-guided tour",
-        "Exclusive safari boat access",
-        "Indian & Continental cuisine as per meal plan",
-        "Kolkata pick-up and drop as per itinerary",
-        "Forest entry / permit fees",
-        "Eco-guide fees",
-        "Boat safari / cruise as per itinerary"
-      ];
+  const packages = [
+    {
+      name: "Basic Jungle Safari",
+      tier: "BUDGET SHARED GROUP TOUR",
+      price: "₹6,900",
+      duration: "2 Nights / 3 Days",
+      group: "15 guests onwards",
+      description: "An affordable shared Sundarbans experience with jungle safari as the main focus and local sightseeing when time permits.",
+      features: [
+        "Shared boat safari",
+        "Forest permits and applicable fees",
+       "Shared meals",
+       "Eco-resort accommodation",
+       "Canning–Canning pickup and drop by basic passenger vehicle",
+       "Local coordination and tour assistance",
+       "Optional Kolkata pickup/drop at extra cost"
+      ],
+      className: "package-basic"
+    },
+    {
+      name: "Advanced Wildlife Expedition",
+      tier: "NATURALIST-GUIDED WILDLIFE EXPEDITION",
+      price: "₹16,900",
+      duration: "3 Nights / 4 Days",
+      group: "Suggested group: 7–12 guests",
+      description: "An extended wildlife-focused safari for amateur photographers and serious nature enthusiasts, with naturalist guidance.",
+      features: [
+        "Extended wildlife safari",
+       "Naturalist-guided exploration",
+       "Eco-resort or houseboat accommodation, as selected",
+       "Meals during the expedition",
+       "Forest permits and applicable fees",
+       "Local coordination and tour assistance",
+       "Arrive the evening before the first safari day"
+      ],
+      className: "package-popular"
+    },
+    {
+      name: "Ultimate Adventure",
+      tier: "EXTENDED WILDERNESS EXPLORATION",
+      price: "₹26,900",
+      duration: "4–5 days or longer",
+      group: "2–6 guests",
+      description: "A highly immersive small-group expedition for professional photographers, filmmakers, researchers, photojournalists and hardcore wildlife explorers.",
+      features: [
+        "Extended wildlife exploration",
+       "Naturalist-guided expedition",
+       "Preferred houseboat accommodation",
+       "Village walk and local livelihood insights",
+       "Meals and safari arrangements as per itinerary",
+       "Forest permits and applicable fees",
+       "Custom itinerary for longer expeditions"
+      ],
+      className: "package-ultimate"
     }
+  ];
 
-    const card = document.createElement("article");
-    card.className = "package-card";
-    if (tierName.includes("basic jungle")) card.classList.add("package-basic");
-    if (tierName.includes("ultimate adventure")) card.classList.add("package-ultimate");
-
-    // All packages use a consistent card hierarchy without a Popular badge.
-
-    card.innerHTML = `
+  packageGrid.innerHTML = packages.map(pkg => `
+    <article class="package-card ${pkg.className}">
       <div class="package-card-content">
-        <h3 class="package-title">${escapeHTML(pkg.name || "Wildlife Expedition")}</h3>
-
-        <div class="package-duration">
-          ${durationDisplay}
+        <span class="package-badge">${pkg.tier}</span>
+        <h3 class="package-title">${pkg.name}</h3>
+        <div class="package-price">
+          <span class="price-amount">${pkg.price}</span>
+          <span class="price-label"> onwards / person</span>
         </div>
-
-        <p class="package-description">
-          ${escapeHTML(pkg.description || "")}
-        </p>
-
-        ${
-          displayFeatures.length
-            ? `<ul class="package-features">
-                ${displayFeatures.map(feature => `
-                  <li>
-                    <span class="feature-check">✓</span>
-                    ${escapeHTML(feature)}
-                  </li>
-                `).join("")}
-              </ul>`
-            : ""
-        }
-
-        <button
-          type="button"
-          class="package-button"
-          data-package-name="${escapeAttribute(pkg.name || "")}"
-        >
-          Enquire Now
-        </button>
+        <div class="package-duration">
+          <span class="duration-option">${pkg.duration}</span>
+          <span class="duration-option">${pkg.group}</span>
+        </div>
+        <p class="package-description">${pkg.description}</p>
+        <ul class="package-features">
+          ${pkg.features.map(feature => `<li><span class="feature-check">✓</span>${feature}</li>`).join("")}
+        </ul>
+        <button type="button" class="package-button" data-package-name="${pkg.name}">Enquire Now</button>
       </div>
-    `;
+    </article>
+  `).join("");
 
-    packageGrid.appendChild(card);
-  });
-
-  // Duration selectors within package cards
-  packageGrid.querySelectorAll(".duration-option").forEach(option => {
-    option.addEventListener("click", () => {
-      const group = option.closest(".duration-choice-group");
-      if (group) group.querySelectorAll(".duration-option").forEach(item => item.classList.remove("is-selected"));
-      option.classList.add("is-selected");
-    });
-  });
-
-  // Attach package buttons
   packageGrid.querySelectorAll(".package-button").forEach(button => {
-    button.addEventListener("click", () => {
-      const packageName = button.dataset.packageName || "";
-      const card = button.closest(".package-card");
-      const selectedDuration = card?.querySelector(".duration-option.is-selected")?.dataset.duration;
-      selectPackage(selectedDuration ? `${packageName} | ${selectedDuration}` : packageName);
-    });
+    button.addEventListener("click", () => selectPackage(button.dataset.packageName || ""));
   });
 }
 
