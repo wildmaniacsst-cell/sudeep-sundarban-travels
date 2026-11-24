@@ -3878,3 +3878,18 @@ footer .footer-main {
   .mobile-nav-links a{padding:12px 0!important;border-bottom:1px solid var(--border);font-size:14px!important;}
   .mobile-nav-links a:last-child{border-bottom:0;}
 }
+
+
+/* ---------- HOMEPAGE TRUST & CREDIBILITY ---------- */
+.trust-section { background: var(--color-bg, #f5f2eb); }
+.trust-heading { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+.trust-heading h2 { margin: 16px 0 20px; }
+.trust-heading p { max-width: 680px; margin: 0 auto; line-height: 1.8; }
+.trust-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.trust-item { padding: 28px 24px; border: 1px solid rgba(30, 40, 30, .13); border-radius: 8px; background: rgba(255,255,255,.38); }
+.trust-number { display: inline-block; margin-bottom: 22px; font-size: 12px; letter-spacing: .16em; opacity: .65; }
+.trust-item h3 { margin: 0 0 12px; font-size: 19px; line-height: 1.35; }
+.trust-item p { margin: 0; font-size: 14px; line-height: 1.75; opacity: .86; }
+.trust-links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 32px; }
+@media (max-width: 900px) { .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .trust-heading { margin-bottom: 30px; } .trust-grid { grid-template-columns: 1fr; gap: 14px; } .trust-item { padding: 22px 20px; } .trust-links { gap: 18px; flex-direction: column; align-items: center; } }
