@@ -640,6 +640,11 @@ body {
     }
 }
 
+
+.private-logo-lockup { display:flex; flex-direction:row; align-items:center; gap:12px; }
+.private-logo-image { width:56px; height:56px; object-fit:contain; flex-shrink:0; }
+.private-logo-text { display:flex; flex-direction:column; line-height:1.2; }
+@media(max-width:600px){ .private-logo-image { width:42px; height:42px; } .private-logo-lockup { gap:8px; } .private-logo-main { font-size:14px; } .private-logo-sub { font-size:9px; letter-spacing:2px; } }
 </style>
 </head>
 
@@ -650,9 +655,9 @@ body {
 <header class="private-nav">
 <div class="private-container private-nav-inner">
 
-<a href="index.html" class="private-logo">
-<span class="private-logo-main">SUDEEP</span>
-<span class="private-logo-sub">SUNDARBAN TRAVELS</span>
+<a href="index.html" class="private-logo private-logo-lockup">
+<img src="logo.jpg" alt="Sudeep Sundarban Travels logo" class="private-logo-image">
+<span class="private-logo-text"><span class="private-logo-main">SUDEEP</span><span class="private-logo-sub">SUNDARBAN TRAVELS</span></span>
 </a>
 
 <nav class="private-nav-links">
