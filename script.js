@@ -334,6 +334,8 @@ function initializeInquiryForm() {
       );
 
       form.reset();
+      departureDate.min = localToday;
+      departureDate.setCustomValidity("");
 
       // WhatsApp follow-up option
       showWhatsAppFollowUp(inquiry);
@@ -368,6 +370,8 @@ function showFormStatus(message, type = "info") {
 
   if (!formStatus) return;
 
+  // Remove any old WhatsApp follow-up link before showing a fresh status.
+  formStatus.querySelectorAll(".whatsapp-followup").forEach(link => link.remove());
   formStatus.textContent = message;
   formStatus.className = "form-status";
   formStatus.classList.add(`status-${type}`);
@@ -452,8 +456,11 @@ function initializeDateValidation() {
 
   arrivalDate.min = localToday;
 
+  departureDate.min = localToday;
+
   arrivalDate.addEventListener("change", () => {
     departureDate.min = arrivalDate.value || localToday;
+    departureDate.setCustomValidity("");
 
     if (
       departureDate.value &&
