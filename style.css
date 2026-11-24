@@ -3903,3 +3903,8 @@ footer .footer-main {
 /* ---------- BOOKING FORM TRUST & CLARITY ---------- */
 .booking-reassurance { margin-top: 16px; padding-left: 14px; border-left: 2px solid #c5a572; font-size: 13px; line-height: 1.7; opacity: .85; }
 .booking-form-intro { margin: 8px 0 0; font-size: 13px; line-height: 1.65; opacity: .72; }
+
+/* ---------- BOOKING CONTACT IMAGE ---------- */
+.booking-contact-image-wrap { margin-top: 28px; width: 100%; overflow: hidden; border-radius: 4px; }
+.booking-contact-image { display:block; width:100%; max-width:560px; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+@media(max-width:768px){ .booking-contact-image-wrap { margin-top:22px; } }
