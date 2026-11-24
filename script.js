@@ -301,6 +301,16 @@ function initializeInquiryForm() {
       return;
     }
 
+    // Pre-open a WhatsApp tab synchronously during the submit click.
+    // Redirect it after the inquiry request finishes to avoid popup blockers.
+    let whatsappWindow = null;
+    try {
+      whatsappWindow = window.open("about:blank", "_blank");
+      if (whatsappWindow) whatsappWindow.opener = null;
+    } catch (popupError) {
+      whatsappWindow = null;
+    }
+
     // Button loading state and duplicate-submit guard
     inquirySubmissionInProgress = true;
     const originalButtonText = submitButton
@@ -343,8 +353,13 @@ function initializeInquiryForm() {
         "success"
       );
 
-      // Keep submitted details available because no-cors hides the response.
-      showWhatsAppFollowUp(inquiry);
+      // Redirect the pre-opened tab to WhatsApp; if blocked, show the manual link.
+      const whatsappUrl = createWhatsAppLink(inquiry);
+      if (whatsappWindow && !whatsappWindow.closed) {
+        whatsappWindow.location.href = whatsappUrl;
+      } else {
+        showWhatsAppFollowUp(inquiry);
+      }
 
     } catch (error) {
       console.error("Inquiry submission error:", error);
@@ -354,8 +369,13 @@ function initializeInquiryForm() {
         "error"
       );
 
-      // Provide a clickable WhatsApp fallback without opening it automatically.
-      showWhatsAppFollowUp(inquiry);
+      // Redirect the pre-opened tab on failure too, so the user can contact us.
+      const whatsappUrl = createWhatsAppLink(inquiry);
+      if (whatsappWindow && !whatsappWindow.closed) {
+        whatsappWindow.location.href = whatsappUrl;
+      } else {
+        showWhatsAppFollowUp(inquiry);
+      }
 
     } finally {
       inquirySubmissionInProgress = false;
