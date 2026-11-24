@@ -101,57 +101,38 @@ function renderPackages() {
   const packages = [
     {
       name: "Basic Jungle Safari",
-      tier: "BUDGET SHARED GROUP TOUR",
-      price: "₹6,900",
-      duration: "2 Nights / 3 Days",
-      group: "15 guests onwards",
-      description: "An affordable shared Sundarbans experience with jungle safari as the main focus and local sightseeing when time permits.",
+      tier: "BASIC JUNGLE SAFARI",
+      price: "₹7,900",
+      duration: "1 Night / 2 Days",
+      description: "Guided Sundarban jungle safari for wildlife and nature enthusiasts.",
       features: [
-        "Shared boat safari",
-        "Forest permits and applicable fees",
-       "Shared meals",
-       "Eco-resort accommodation",
-       "Canning–Canning pickup and drop by basic passenger vehicle",
-       "Local coordination and tour assistance",
-       "Optional Kolkata pickup/drop at extra cost"
+        "Guided Tour",
+        "All Meals as per Itinerary"
       ],
       className: "package-basic"
     },
     {
       name: "Advanced Wildlife Expedition",
-      tier: "NATURALIST-GUIDED WILDLIFE EXPEDITION",
-      price: "₹16,900",
-      duration: "3 Nights / 4 Days",
-      group: "Suggested group: 7–12 guests",
-      description: "An extended wildlife-focused safari for amateur photographers and serious nature enthusiasts, with naturalist guidance.",
+      tier: "ADVANCED WILDLIFE EXPEDITION",
+      price: "₹17,900",
+      duration: "2 Nights / 3 Days",
+      description: "Extended wildlife expedition with expert guides and deeper exploration.",
       features: [
-        "Extended wildlife safari",
-       "Naturalist-guided exploration",
-       "Eco-resort or houseboat accommodation, as selected",
-       "Meals during the expedition",
-       "Forest permits and applicable fees",
-       "Kolkata pickup and drop",
-       "Local coordination and tour assistance",
-       "Arrive the evening before the first safari day"
+        "Expert Guides",
+        "Tiger Tracking Experience"
       ],
       className: "package-popular"
     },
     {
-      name: "Ultimate Adventure",
-      tier: "EXTENDED WILDERNESS EXPLORATION",
-      price: "₹26,900",
-      duration: "4–5 days or longer",
-      group: "2–6 guests",
-      description: "A highly immersive small-group expedition for professional photographers, filmmakers, researchers, photojournalists and hardcore wildlife explorers.",
+      name: "Ultimate Adventure Package",
+      tier: "ULTIMATE ADVENTURE PACKAGE",
+      price: "₹27,900",
+      duration: "Custom / Extended",
+      description: "Premium Sundarban exploration with exclusive wildlife experiences.",
       features: [
-        "Extended wildlife exploration",
-       "Naturalist-guided expedition",
-       "Luxury eco-resort accommodation",
-       "Kolkata pickup and drop",
-       "Village walk and local livelihood insights",
-       "Meals and safari arrangements as per itinerary",
-       "Forest permits and applicable fees",
-       "Custom itinerary for longer expeditions"
+        "Luxury Camping",
+        "Photographic Assistance",
+        "Exclusive Access"
       ],
       className: "package-ultimate"
     }
@@ -168,7 +149,6 @@ function renderPackages() {
         </div>
         <div class="package-duration">
           <span class="duration-option">${pkg.duration}</span>
-          <span class="duration-option">${pkg.group}</span>
         </div>
         <p class="package-description">${pkg.description}</p>
         <ul class="package-features">
