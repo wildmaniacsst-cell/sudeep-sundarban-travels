@@ -326,7 +326,7 @@ h3 {
             rgba(9, 24, 15, 0.48) 45%,
             rgba(9, 24, 15, 0.08) 100%
         ),
-        url('./sundarban tiger 2.jpg');
+        url('./sundarban tiger 2.webp');
 
     background-size: cover;
     background-position: center;
@@ -1652,7 +1652,7 @@ footer {
             rgba(9, 24, 15, 0.22) 48%,
             rgba(9, 24, 15, 0.02) 72%
         ),
-        url('./sundarban tiger 2.jpg') !important;
+        url('./sundarban tiger 2.webp') !important;
 }
 
 /* Desktop text area */
@@ -3541,7 +3541,7 @@ footer .footer-main {
 #gallery .wildlife-slide{position:relative;flex:0 0 calc((100% - 32px)/3);height:clamp(300px,34vw,480px);border-radius:5px;overflow:hidden;scroll-snap-align:start;background:#1a2d22}
 #gallery .wildlife-slide img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
 #gallery .wildlife-slide:hover img{transform:scale(1.04)}
-#gallery .wildlife-slide img[src*="tiger%2025.jpg"]{object-position:center 70%;}
+#gallery .wildlife-slide img[src*="tiger%2025.webp"]{object-position:center 70%;}
 #gallery .wildlife-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.58));pointer-events:none}
 #gallery .wildlife-slide-caption{position:absolute;left:16px;right:auto;bottom:18px;max-width:calc(100% - 32px);color:#fff;font-size:10px;letter-spacing:1.7px;font-weight:800;line-height:1.45;z-index:2;text-transform:uppercase;padding:11px 14px 11px 12px;background:linear-gradient(110deg,rgba(12,25,18,.82),rgba(12,25,18,.48));border-left:2px solid #c8a96a;border-radius:0 5px 5px 0;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);text-shadow:0 1px 4px rgba(0,0,0,.4);box-shadow:0 8px 24px rgba(0,0,0,.18);transition:transform .35s ease,background .35s ease,border-color .35s ease}
 #gallery .wildlife-slide:hover .wildlife-slide-caption{transform:translateY(-5px);background:linear-gradient(110deg,rgba(12,25,18,.92),rgba(12,25,18,.62));border-left-color:#e5c47d}
@@ -3605,7 +3605,7 @@ footer .footer-main {
   z-index:0;
   background:
     linear-gradient(rgba(11,43,30,.56),rgba(11,43,30,.68)),
-    url("sundarban%20tiger%2025.jpg") 22% center/cover no-repeat;
+    url("sundarban%20tiger%2025.webp") 22% center/cover no-repeat;
   opacity:1;
   pointer-events:none;
 }
