@@ -3899,3 +3899,7 @@ footer .footer-main {
 #reviews .reviews-cta-note { font-size:12px; letter-spacing:.02em; color:rgba(247,244,233,.62); }
 #reviews .reviews-cta .button { margin-top:4px; }
 @media(max-width:600px){ #reviews .reviews-cta { margin-top:22px; padding:0 12px; } #reviews .reviews-cta-note { line-height:1.6; } }
+
+/* ---------- BOOKING FORM TRUST & CLARITY ---------- */
+.booking-reassurance { margin-top: 16px; padding-left: 14px; border-left: 2px solid #c5a572; font-size: 13px; line-height: 1.7; opacity: .85; }
+.booking-form-intro { margin: 8px 0 0; font-size: 13px; line-height: 1.65; opacity: .72; }
