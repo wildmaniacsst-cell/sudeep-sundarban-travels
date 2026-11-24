@@ -6,7 +6,7 @@
 // ============================================
 
 const SST_CONFIG = {
-  apiUrl: "https://script.google.com/macros/s/AKfycbxuFasUaPeGIzCv3cCA0TDQgpd3V01O0n2dTLH-VWGCmO99te7_EFrVWj8NxgJVP_ru5Q/exec",
+  apiUrl: "https://script.google.com/macros/s/AKfycbyi7rddWpxW5EanHMGsxJw8IuZVSHzHzuAUo8fIyva-ssbHKFzBCdQpNhuglTprR7N0Sw/exec",
   whatsapp: "919123388206",
   email: "wildmaniacsst@gmail.com",
   businessName: "Sudeep Sundarban Travels"
@@ -249,6 +249,7 @@ function selectPackage(packageName) {
 // ============================================
 
 function initializeInquiryForm() {
+  let inquirySubmissionInProgress = false;
   const form = document.getElementById("inquiryForm");
   const submitButton = document.getElementById("submitButton");
   const formStatus = document.getElementById("formStatus");
@@ -257,6 +258,8 @@ function initializeInquiryForm() {
 
   form.addEventListener("submit", async event => {
     event.preventDefault();
+
+    if (inquirySubmissionInProgress) return;
 
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -298,7 +301,8 @@ function initializeInquiryForm() {
       return;
     }
 
-    // Button loading state
+    // Button loading state and duplicate-submit guard
+    inquirySubmissionInProgress = true;
     const originalButtonText = submitButton
       ? submitButton.innerHTML
       : "Submit Inquiry";
@@ -313,45 +317,48 @@ function initializeInquiryForm() {
 
     try {
       /*
-       * Apps Script receives the JSON body.
-       * text/plain avoids browser CORS preflight issues.
-       * The response is opaque in no-cors mode, so we cannot
-       * inspect backend success/failure from the browser.
+       * Apps Script receives JSON as text/plain to avoid CORS preflight.
+       * In no-cors mode, the browser cannot read the backend response,
+       * so we must not claim that the enquiry is confirmed as saved.
        */
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
 
-      await fetch(SST_CONFIG.apiUrl, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify(inquiry)
-      });
+      try {
+        await fetch(SST_CONFIG.apiUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(inquiry),
+          signal: controller.signal
+        });
+      } finally {
+        clearTimeout(timeoutId);
+      }
 
       showFormStatus(
-        "Thank you! Your inquiry has been submitted. We will contact you shortly.",
+        "Your inquiry request has been sent. We cannot verify the server response in this browser. We will contact you shortly; you can also confirm directly via WhatsApp.",
         "success"
       );
 
-      form.reset();
-      departureDate.min = localToday;
-      departureDate.setCustomValidity("");
-
-      // WhatsApp follow-up option
+      // Keep submitted details available because no-cors hides the response.
       showWhatsAppFollowUp(inquiry);
 
     } catch (error) {
       console.error("Inquiry submission error:", error);
 
       showFormStatus(
-        "Unable to submit your inquiry right now. Please contact us directly via WhatsApp.",
+        "We could not complete the inquiry request from this browser. Please use the WhatsApp option below to contact us.",
         "error"
       );
 
-      // WhatsApp fallback
-      openWhatsAppInquiry(inquiry);
+      // Provide a clickable WhatsApp fallback without opening it automatically.
+      showWhatsAppFollowUp(inquiry);
 
     } finally {
+      inquirySubmissionInProgress = false;
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.innerHTML = originalButtonText;
