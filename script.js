@@ -349,7 +349,7 @@ function initializeInquiryForm() {
       }
 
       showFormStatus(
-        "Your inquiry request has been sent. We cannot verify the server response in this browser. We will contact you shortly; you can also confirm directly via WhatsApp.",
+        "Your inquiry transmission was attempted. Website confirmation is not available, so server receipt is not verified. For a reliable confirmation, continue on WhatsApp using the backup link below.",
         "success"
       );
 
@@ -357,9 +357,9 @@ function initializeInquiryForm() {
       const whatsappUrl = createWhatsAppLink(inquiry);
       if (whatsappWindow && !whatsappWindow.closed) {
         whatsappWindow.location.href = whatsappUrl;
-      } else {
-        showWhatsAppFollowUp(inquiry);
       }
+      // Always provide a visible WhatsApp backup link, even if the tab opens.
+      showWhatsAppFollowUp(inquiry);
 
     } catch (error) {
       console.error("Inquiry submission error:", error);
