@@ -1622,7 +1622,7 @@
  const move=(direction)=>track.scrollBy({left:step()*direction,behavior:'smooth'});
  prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
  const stop=()=>{paused=true;if(timer){clearInterval(timer);timer=null;}};
- const start=()=>{paused=false;if(timer)clearInterval(timer);timer=setInterval(()=>{if(paused)return;const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-8)track.scrollTo({left:0,behavior:'smooth'});else move(1);},4800);};
+ const start=()=>{paused=false;if(timer)clearInterval(timer);timer=setInterval(()=>{if(paused)return;const max=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=max-8)track.scrollTo({left:0,behavior:'smooth'});else move(1);},2000);};
  track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);
  track.addEventListener('focusin',stop);track.addEventListener('focusout',start);
  start();
