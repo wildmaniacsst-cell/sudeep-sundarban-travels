@@ -101,57 +101,54 @@ function renderPackages() {
   const packages = [
     {
       name: "Basic Jungle Safari",
-      tier: "BUDGET SHARED GROUP TOUR",
+      tier: "SHARED SUNDARBAN EXPERIENCE",
       price: "₹6,900",
-      duration: "2 Nights / 3 Days",
-      group: "15 guests onwards",
-      description: "An affordable shared Sundarbans experience with jungle safari as the main focus and local sightseeing when time permits.",
+      priceLabel: " onwards / person",
+      duration: "1 Night / 2 Days or 2 Nights / 3 Days",
+      description: "An accessible introduction to the Sundarbans for families and casual nature travellers. Duration and arrangements are customised after discussion.",
       features: [
-        "Shared boat safari",
-        "Forest permits and applicable fees",
-       "Shared meals",
-       "Eco-resort accommodation",
-       "Canning–Canning pickup and drop by basic passenger vehicle",
-       "Local coordination and tour assistance",
-       "Optional Kolkata pickup/drop at extra cost"
+        "Shared safari boat with other guests",
+        "Shared accommodation: 2–3 guests per room",
+        "Breakfast, brunch, lunch, dinner and snacks",
+        "Forest permissions, applicable fees and guide included",
+        "At least 8 hours of safari on safari days",
+        "Kolkata pickup available at extra cost"
       ],
       className: "package-basic"
     },
     {
       name: "Advanced Wildlife Expedition",
-      tier: "NATURALIST-GUIDED WILDLIFE EXPEDITION",
+      tier: "NATURALIST-GUIDED PRIVATE EXPEDITION",
       price: "₹16,900",
-      duration: "3 Nights / 4 Days",
-      group: "Suggested group: 7–12 guests",
-      description: "An extended wildlife-focused safari for amateur photographers and serious nature enthusiasts, with naturalist guidance.",
+      priceLabel: " onwards / person",
+      duration: "Minimum 3 Nights / 4 Days",
+      description: "A longer, wildlife-focused expedition for enthusiasts and photographers, with a private boat and naturalist-guided exploration.",
       features: [
-        "Extended wildlife safari",
-       "Naturalist-guided exploration",
-       "Eco-resort or houseboat accommodation, as selected",
-       "Meals during the expedition",
-       "Forest permits and applicable fees",
-       "Kolkata pickup and drop",
-       "Local coordination and tour assistance",
-       "Arrive the evening before the first safari day"
+        "Private safari boat for your group",
+        "Sunrise-to-sunset wildlife exploration",
+        "Naturalist-guided expedition",
+        "Eco-resort or houseboat stay, by arrangement",
+        "Meals, forest permissions and applicable fees",
+        "Kolkata pickup and drop at designated locations",
+        "Previous-evening arrival at Godkhali recommended"
       ],
       className: "package-popular"
     },
     {
       name: "Ultimate Adventure",
-      tier: "EXTENDED WILDERNESS EXPLORATION",
-      price: "₹26,900",
-      duration: "4–5 days or longer",
-      group: "2–6 guests",
-      description: "A highly immersive small-group expedition for professional photographers, filmmakers, researchers, photojournalists and hardcore wildlife explorers.",
+      tier: "PREMIUM SMALL-GROUP WILDERNESS",
+      price: "₹26,900–₹48,900",
+      priceLabel: " per person, depending on group size",
+      duration: "Minimum 4 Nights / 5 Days",
+      description: "A highly immersive customised expedition for dedicated wildlife photographers, nature enthusiasts and small private groups. Larger groups receive a lower per-person rate.",
       features: [
-        "Extended wildlife exploration",
-       "Naturalist-guided expedition",
-       "Luxury eco-resort accommodation",
-       "Kolkata pickup and drop",
-       "Village walk and local livelihood insights",
-       "Meals and safari arrangements as per itinerary",
-       "Forest permits and applicable fees",
-       "Custom itinerary for longer expeditions"
+        "₹26,900/person for 6 guests; ₹48,900/person for 2 guests",
+        "Private boat and extended sunrise-to-sunset exploration",
+        "Luxury eco-resort; houseboat stay on request",
+        "Meals, forest permissions and Kolkata pickup/drop",
+        "Village walk on request, subject to local conditions and permissions",
+        "Custom itinerary; additional days cost extra",
+        "Our team may document the expedition for its own use"
       ],
       className: "package-ultimate"
     }
@@ -164,7 +161,7 @@ function renderPackages() {
         <h3 class="package-title">${pkg.name}</h3>
         <div class="package-price">
           <span class="price-amount">${pkg.price}</span>
-          <span class="price-label"> onwards / person</span>
+          <span class="price-label">${pkg.priceLabel}</span>
         </div>
         <div class="package-duration">
           <span class="duration-option">${pkg.duration}</span>
@@ -182,7 +179,6 @@ function renderPackages() {
     button.addEventListener("click", () => selectPackage(button.dataset.packageName || ""));
   });
 }
-
 // ============================================
 // PACKAGE HELPERS
 // ============================================
