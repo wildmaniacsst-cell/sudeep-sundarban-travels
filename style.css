@@ -3927,3 +3927,50 @@ footer .footer-main {
 .booking-contact-image-wrap { margin-top: 28px; width: 100%; overflow: hidden; border-radius: 4px; }
 .booking-contact-image { display:block; width:100%; max-width:560px; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
 @media(max-width:768px){ .booking-contact-image-wrap { margin-top:22px; } }
+
+
+/* ================= SAFARI METHOD & GUEST GUIDANCE ================= */
+.safari-guidance-section{background:#f2f0e9;padding-top:84px;padding-bottom:88px}
+.safari-guidance-heading{max-width:780px;margin:0 auto 38px;text-align:center}
+.safari-guidance-heading h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.2;margin:14px 0}
+.safari-guidance-heading h2 em{color:#b49354;font-style:normal}
+.safari-guidance-heading p{max-width:690px;margin:0 auto;color:#66746b}
+.safari-guidance-grid{max-width:1000px;margin:auto;display:grid;gap:14px}
+.safari-guidance-card{background:#fff;border:1px solid #e0e2d9;border-radius:5px;overflow:hidden;box-shadow:0 6px 24px rgba(22,45,32,.035)}
+.safari-guidance-card summary{list-style:none;display:flex;align-items:center;gap:16px;padding:21px 24px;cursor:pointer}
+.safari-guidance-card summary::-webkit-details-marker{display:none}
+.sg-number{flex:0 0 42px;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#18382a;color:#d6b66d;font-size:12px;font-weight:700}
+.safari-guidance-card summary strong{display:block;color:#20352a;font-size:16px}
+.safari-guidance-card summary small{display:block;color:#788279;font-size:12px;margin-top:4px}
+.sg-toggle{margin-left:auto;flex-shrink:0;font-size:22px;color:#b49354;transition:transform .2s}
+.safari-guidance-card[open] .sg-toggle{transform:rotate(45deg)}
+.sg-content{padding:0 24px 26px 82px;color:#5e6c63;font-size:14px}
+.sg-content h3{font-family:'Playfair Display',serif;color:#23372b;font-size:20px;margin:4px 0 12px}
+.sg-content h4{font-size:13px;color:#21372b;margin:20px 0 8px}
+.sg-content p{margin:0 0 13px}
+.sg-list{padding-left:20px;margin:8px 0 16px;display:grid;gap:7px}
+.sg-list li::marker{color:#b49354}
+.sg-callout{padding:14px 16px;background:#edf1e9;border-left:3px solid #b49354;border-radius:2px}
+.sg-two-column{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.sg-do-title{color:#2e684a!important}.sg-dont-title{color:#a34b43!important}
+.sg-payment-box{display:flex;align-items:center;gap:16px;background:#18382a;color:#fff;padding:18px 20px;border-radius:4px;margin-bottom:18px}
+.sg-payment-box strong{font-family:'Playfair Display',serif;font-size:23px;color:#d6b66d;white-space:nowrap}
+.sg-payment-box span{font-size:13px;color:#d6e0d7}
+.sg-refund-list{list-style:none;padding:0}
+.sg-refund-list li{padding:10px 12px;border:1px solid #e5e7df;border-radius:3px;display:flex;justify-content:space-between;gap:15px}
+.sg-refund-list li strong{color:#22372b;white-space:nowrap}
+.sg-refund-list li span{text-align:right}
+@media(max-width:600px){
+.safari-guidance-section{padding-top:60px;padding-bottom:62px}
+.safari-guidance-heading{text-align:left;margin-bottom:26px}
+.safari-guidance-heading p{margin:0}
+.safari-guidance-card summary{padding:17px 15px;gap:12px}
+.sg-number{width:36px;height:36px;flex-basis:36px}
+.safari-guidance-card summary strong{font-size:14px}
+.safari-guidance-card summary small{font-size:11px}
+.sg-content{padding:0 16px 22px 16px}
+.sg-two-column{grid-template-columns:1fr;gap:10px}
+.sg-refund-list li{flex-direction:column;gap:4px}
+.sg-refund-list li span{text-align:left}
+.sg-payment-box{align-items:flex-start;flex-direction:column;gap:3px}
+}
