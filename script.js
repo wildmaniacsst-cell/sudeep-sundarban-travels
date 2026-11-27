@@ -105,8 +105,9 @@ function renderPackages() {
       price: "₹6,900",
       priceLabel: " onwards / person",
       duration: "1 Night / 2 Days or 2 Nights / 3 Days",
-      description: "An accessible introduction to the Sundarbans for families and casual nature travellers. Duration and arrangements are customised after discussion.",
+      description: "An accessible shared Sundarbans experience for groups of 15–20 persons, ideal for families and casual nature travellers. Duration and arrangements are customised after discussion.",
       features: [
+        "Group size: 15–20 persons",
         "Shared safari boat with other guests",
         "Shared accommodation: 2–3 guests per room",
         "Breakfast, brunch, lunch, dinner and snacks",
