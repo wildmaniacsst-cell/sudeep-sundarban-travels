@@ -122,8 +122,9 @@ function renderPackages() {
       price: "₹16,900",
       priceLabel: " onwards / person",
       duration: "Minimum 3 Nights / 4 Days",
-      description: "A longer, wildlife-focused expedition for enthusiasts and photographers, with a private boat and naturalist-guided exploration.",
+      description: "A longer, wildlife-focused private expedition for enthusiasts and photographers, designed for a small group of 7–12 participants with a private boat and naturalist-guided exploration.",
       features: [
+        "Small-group expedition: 7–12 participants",
         "Private safari boat for your group",
         "Sunrise-to-sunset wildlife exploration",
         "Naturalist-guided expedition",
