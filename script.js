@@ -137,7 +137,7 @@ function renderPackages() {
     {
       name: "Ultimate Adventure",
       tier: "PREMIUM SMALL-GROUP WILDERNESS",
-      price: "₹26,900–₹48,900",
+      price: "₹26,900–₹67,900",
       priceLabel: " per person, depending on group size",
       duration: "Minimum 4 Nights / 5 Days",
       description: "A highly immersive customised expedition for dedicated wildlife photographers, nature enthusiasts and small private groups. Larger groups receive a lower per-person rate.",
